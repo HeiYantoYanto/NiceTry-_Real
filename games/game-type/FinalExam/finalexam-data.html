@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Final Exam</title>
+    <link rel="stylesheet" href="finalexam-data.css">
+    <link rel="stylesheet" href="../../../navbar/navbar_main.css">
+
+    <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Score Tracker -->
+    <div id="score-tracker" style="position: fixed; top: 90px; right: 36px; z-index: 10000; background: rgba(32,0,36,0.85); color: #fff; padding: 16px 32px; border-radius: 1.2rem; font-size: 1.3rem; font-family: 'Kumbh Sans', sans-serif; box-shadow: 0 2px 12px #0004;">
+            <span id="score-correct">Correct: 0</span> | <span id="score-wrong">Wrong: 0</span>
+    </div>
+    <nav class="navbar">
+            <div class="navbar__container">
+            <a href="../../../index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+            <div class="navbar__toggle" id="mobile-menu"> 
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="../../../index.html" class="navbar__links">
+                        Home
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <button>Team Info</button>
+                    <div class="content">
+                        <a href="../../../team_info/ferdinand/ferdinand.html">陈德辉</a>
+                        <a href="../../../team_info/hardian/hardian.html">柯玉甹</a>
+                        <a href="../../../team_info/ken/ken.html">黄明亮</a>
+                        <a href="../../../team_info/raynard/raynard.html">苏伟全</a>
+                        <a href="../../../team_info/andrew/andrew.html">廖伟汉</a>
+                        <a href="../../../team_info/bevan/bevan.html">唐杨恩</a>
+                    </div>
+                </li>
+                <li class="navbar__item">
+                    <a href="../../../index.html#courses-section" class="navbar__links">
+                        Course
+                    </a>
+                </li>
+                    <li class="navbar__item">
+                    <a href="../../../games/difficulty.html" class="navbar__links">
+                        Games
+                    </a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="../../../login_signup/login/login.html" class="button">
+                        Log in
+                    </a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="../../../login_signup/signup/signup.html" class="button">
+                        Sign up                    
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- <div class="feedback" id="global-feedback"></div> -->
+    <div class="main">
+        <!-- True/False Section -->
+        <div id="tof-section">
+            <div class="quiz__question">
+                <h1 id="tof-question"></h1>
+            </div>
+            <div class="tof__buttons">
+                <button id="tof-true-btn" class="btn-glow btn-true btn">True</button>
+                <button id="tof-false-btn" class="btn-glow btn-false btn">False</button>
+            </div>
+        </div>
+
+        <!-- MCQ Section -->
+        <div id="mcq-section" style="display:none;">
+            <div class="quiz__question">
+                <h1 id="mcq-question"></h1>
+            </div>
+            <div class="mcq__buttons">
+                <button id="mcq-btn-0" class="btn-glow btn-choice"></button>
+                <button id="mcq-btn-1" class="btn-glow btn-choice"></button>
+                <button id="mcq-btn-2" class="btn-glow btn-choice"></button>
+                <button id="mcq-btn-3" class="btn-glow btn-choice"></button>
+            </div>
+        </div>
+
+        <!-- Fill in the Blanks Section -->
+        <div id="fitb-section" style="display:none;">
+            <div class="quiz__question">
+                <h1 id="fitb-question"></h1>
+            </div>
+            <div class="fitb__input-row">
+                <input type="text" id="fitb-input" autocomplete="off">
+                <button id="fitb-next-btn">Next</button>
+            </div>
+        </div>
+
+        <!-- Popup Modal for feedback and final result -->
+        <div id="quiz-modal" class="quiz__modal" style="display:none;">
+            <div class="quiz__modal-content" id="quiz-modal-content"></div>
+        </div>
+    </div>
+    
+    <script src="finalexam-data.js"></script>
+    <script src="../../../shared/sidebar.js"></script>
+    <script src="../../../shared/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="trueorfalse.css">
+    <link rel="stylesheet" href="../../../../navbar/navbar_main.css">
+        <!-- This is for symbols-->
+    <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+    <!-- This is for Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Score Tracker -->
+    <div id="score-tracker" style="position: fixed; top: 90px; right: 36px; z-index: 10000; background: rgba(32,0,36,0.85); color: #fff; padding: 16px 32px; border-radius: 1.2rem; font-size: 1.3rem; font-family: 'Kumbh Sans', sans-serif; box-shadow: 0 2px 12px #0004;">
+        <span id="score-correct">Correct: 0</span> | <span id="score-wrong">Wrong: 0</span>
+    </div>
+    <!-- Navbar Section-->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="../../../../index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+            <div class="navbar__toggle" id="mobile-menu"> 
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="../../../../index.html" class="navbar__links">
+                        Home
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <button>Team Info</button>
+                    <div class="content">
+                        <a href="../../../../team_info/ferdinand/ferdinand.html">陈德辉</a>
+                        <a href="../../../../team_info/hardian/hardian.html">柯玉甹</a>
+                        <a href="../../../../team_info/ken/ken.html">黄明亮</a>
+                        <a href="../../../../team_info/raynard/raynard.html">苏伟全</a>
+                        <a href="../../../../team_info/andrew/andrew.html">廖伟汉</a>
+                        <a href="../../../../team_info/bevan/bevan.html">唐杨恩</a>
+                    </div>
+                </li>
+                <li class="navbar__item">
+                    <a href="../../../../index.html#courses-section" class="navbar__links">
+                        Course
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../../../../games/gamesnew-medium.html" class="navbar__links">
+                        Games
+                    </a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="../../../../login_signup/login/login.html" class="button">
+                        Log in
+                    </a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="../../../../login_signup/signup/signup.html" class="button">
+                        Sign up                    
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+    <div class="main">
+        <div class="bubbles">
+            <span style="--i:07;"></span>
+            <span style="--i:28;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:33;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:04;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:30;"></span>
+            <span style="--i:11;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:36;"></span>
+            <span style="--i:09;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:03;"></span>
+            <span style="--i:27;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:38;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:32;"></span>
+            <span style="--i:06;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:35;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:29;"></span>
+            <span style="--i:08;"></span>
+            <span style="--i:31;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:05;"></span>
+            <span style="--i:37;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:34;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:02;"></span>
+            <span style="--i:39;"></span>
+            <span style="--i:01;"></span>
+
+        </div>
+        <div class="main__container quiz__container">
+            <div class="quiz__question">
+                <h1 id="quiz-question">Is Quick Sort a sorting algorithm?</h1>
+            </div>
+            <div class="quiz__buttons">
+                <button id="true-btn" class="btn btn-true">True</button>
+                <button id="false-btn" class="btn btn-false">False</button>
+            </div>
+        </div>
+        <!-- Popup Modal -->
+        <div id="quiz-modal" class="quiz__modal" style="display:none;">
+            <div class="quiz__modal-content" id="quiz-modal-content"></div>
+        </div>
+    </div>
+    <div id="user-sidebar" class="user-sidebar">
+    <div class="sidebar-content">
+        <div class="sidebar-header">
+            <h3>User Menu</h3>
+            <button class="close-sidebar" id="close-sidebar">&times;</button>
+        </div>
+        <div class="sidebar-body">
+            <div class="user-info">
+                <i class="fa-solid fa-circle-user sidebar-user-icon"></i>
+                <p id="sidebar-username">User</p>
+            </div>
+            <div class="sidebar-options">
+                <a href="../../../../profile/settings.html" class="sidebar-btn" id="settings-btn">
+                    <i class="fa-solid fa-cog"></i> Settings
+                </a>
+                <a href="../../../../profile/achivements.html" class="sidebar-btn" id="achievements-btn">
+                    <i class="fa-solid fa-trophy"></i> Achievements
+                </a>
+                <button class="sidebar-btn" id="logout-btn">
+                    <i class="fa-solid fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="../../../../shared/progress.js"></script>
+    <script src="tof-search.js"></script>
+    <script src="../../../../shared/auth.js"></script>
+    <script src="../../../../shared/sidebar.js"></script>
+</body>
+</html>

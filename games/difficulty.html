@@ -1,0 +1,126 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="../navbar/navbar_main.css">
+        <link rel="stylesheet" href="difficulty.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+        <title>Difficulty</title>
+    </head>
+    <body>
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="../index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="../index.html" class="navbar__links">
+                            Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <button>Team Info</button>
+                        <div class="content">
+                            <a href="../team_info/ferdinand/ferdinand.html">陈德辉</a>
+                            <a href="../team_info/hardian/hardian.html">柯玉甹</a>
+                            <a href="../team_info/ken/ken.html">黄明亮</a>
+                            <a href="../team_info/raynard/raynard.html">苏伟全</a>
+                            <a href="../team_info/andrew/andrew.html">廖伟汉</a>
+                            <a href="../team_info/bevan/bevan.html">唐杨恩</a>
+                        </div>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../index.html#courses-section" class="navbar__links" id="course-navbar-link">
+                            Course
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../games/difficulty.html" class="navbar__links">
+                            Games
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="../login_signup/login/login.html" class="button">
+                            Log in
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="../login_signup/signup/signup.html" class="button">
+                            Sign up                    
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    <!-- Difficulty Section -->
+    <section id="difficulty-section">
+        <div class="courses__container">
+            <a class="courses__list difficulty-option" id="easy-difficulty" data-difficulty="easy" href="gamesnew-easy.html">
+                <div class="course1-img" style="position:relative; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-gauge-simple game-card-icon" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:2.6em; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.25);"></i>
+                </div>
+                <h1>Easy</h1>
+            </a>
+            <a class="courses__list difficulty-option" id="medium-difficulty" data-difficulty="medium" href="gamesnew-medium.html">
+                <div class="course2-img" style="position:relative; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-gauge game-card-icon" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:2.6em; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.25);"></i>
+                </div>
+                <h1>Medium</h1>
+            </a>
+            <a class="courses__list difficulty-option" id="hard-difficulty" data-difficulty="hard" href="gamesnew-hard.html">
+                <div class="course3-img" style="position:relative; display:flex; align-items:center; justify-content:center;">
+                    <i class="fa-solid fa-gauge-high game-card-icon" style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:2.6em; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.25);"></i>
+                </div>
+                <h1>Hard</h1>
+            </a>
+        </div>
+    </section>
+
+    <!-- User Sidebar -->
+    <div id="user-sidebar" class="user-sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-header">
+                <h3>User Menu</h3>
+                <button class="close-sidebar" id="close-sidebar">&times;</button>
+            </div>
+            <div class="sidebar-body">
+                <div class="user-info">
+                    <i class="fa-solid fa-circle-user sidebar-user-icon"></i>
+                    <p id="sidebar-username">User</p>
+                </div>
+                <div class="sidebar-options">
+                    <!-- Settings removed -->
+                    <a href="../profile/achivements.html" class="sidebar-btn" id="achievements-btn">
+                        <i class="fa-solid fa-trophy"></i> Achievements
+                    </a>
+                    <button class="sidebar-btn" id="logout-btn">
+                        <i class="fa-solid fa-sign-out-alt"></i> Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../app.js"></script>
+    <script src="../shared/click.js"></script>
+    <script src="../shared/sidebar.js"></script>
+    <script src="../shared/auth.js"></script>
+    <script src="../shared/theme.js"></script>
+    <script src="difficulty.js"></script>
+    </body>
+    </html>

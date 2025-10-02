@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Games - Easy</title>
+  <link rel="stylesheet" href="../theme.css">
+  <link rel="stylesheet" href="gamesnew.css">
+    <link rel="stylesheet" href="../navbar/navbar_main.css">
+    <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+  <script src="../shared/theme.js"></script>
+ </head>
+ <body class="difficulty-easy">
+
+  <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="../index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="../index.html" class="navbar__links">
+                            Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <button>Team Info</button>
+                        <div class="content">
+                            <a href="../team_info/ferdinand/ferdinand.html">陈德辉</a>
+                            <a href="../team_info/hardian/hardian.html">柯玉甹</a>
+                            <a href="../team_info/ken/ken.html">黄明亮</a>
+                            <a href="../team_info/raynard/raynard.html">苏伟全</a>
+                            <a href="../team_info/andrew/andrew.html">廖伟汉</a>
+                            <a href="../team_info/bevan/bevan.html">唐杨恩</a>
+                        </div>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../index.html#courses-section" class="navbar__links" id="course-navbar-link">
+                            Course
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="difficulty.html" class="navbar__links">
+                            Games
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="../login_signup/login/login.html" class="button">
+                            Log in
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="../login_signup/signup/signup.html" class="button">
+                            Sign up                    
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+  <!-- Difficulty Selection Button -->
+  <div style="text-align: center; margin: 20px 0;">
+    <a id="difficulty-select-btn" href="difficulty.html" class="difficulty-btn-easy">
+      <span id="difficulty-select-text">Select Difficulty Level</span>
+    </a>
+  </div>
+
+  <div class="member-name"></div>
+
+  <div class="carousel-outer-center">
+    <div class="carousel-container">
+      <button class="nav-arrow left">‹</button>
+      <div class="carousel-track">
+        <!-- tof -->
+        <div class="card" data-index="0">
+          <div class="card-gradient-square card-gradient-0"></div>
+          <i class="fa-solid fa-circle-check card-icon" aria-hidden="true"></i>
+          <div class="card-buttons">
+            <button onclick="location.href='game-type/easy/TrueOrFalse/tof-sort.html'">Sort</button>
+            <button onclick="location.href='game-type/easy/TrueOrFalse/tof-search.html'">Search</button>
+            <button onclick="location.href='game-type/easy/TrueOrFalse/tof-data.html'">DS</button>
+          </div>
+        </div>
+        <!-- mcq -->
+        <div class="card" data-index="1">
+          <div class="card-gradient-square card-gradient-1"></div>
+          <i class="fa-solid fa-list-check card-icon" aria-hidden="true"></i>
+          <div class="card-buttons">
+            <button onclick="location.href='game-type/easy/MultipleChoice/mcq-sort.html'">Sort</button>
+            <button onclick="location.href='game-type/easy/MultipleChoice/mcq-search.html'">Search</button>
+            <button onclick="location.href='game-type/easy/MultipleChoice/mcq-data.html'">DS</button>
+          </div>
+        </div>
+        <!-- crossword -->
+        <div class="card" data-index="2">
+          <div class="card-gradient-square card-gradient-2"></div>
+          <i class="fa-solid fa-puzzle-piece card-icon" aria-hidden="true"></i>
+          <div class="card-buttons">
+            <button style="margin: 0 auto;" onclick="window.open('https://crosswordlabs.com/view/2025-09-03-68', '_blank')">Enter</button>
+          </div>
+        </div>
+        <!-- flashcard -->
+        <div class="card" data-index="3">
+          <div class="card-gradient-square card-gradient-3"></div>
+          <i class="fa-regular fa-clone card-icon" aria-hidden="true"></i>
+          <div class="card-buttons">
+              <button style="margin: 0 auto;" onclick="window.open('https://quizlet.com/kr/1072363126/data-structure-search-algorithm-and-sort-algorithm-flash-cards/', '_blank')">Enter</button>
+          </div>
+        </div>
+        <!-- fitb -->
+        <div class="card" data-index="4">
+          <div class="card-gradient-square card-gradient-4"></div>
+          <i class="fa-regular fa-pen-to-square card-icon" aria-hidden="true"></i>
+          <div class="card-buttons">
+            <button onclick="location.href='game-type/easy/FillintheBlanks/fitb-sort.html'">Sort</button>
+            <button onclick="location.href='game-type/easy/FillintheBlanks/fitb-search.html'">Search</button>
+            <button onclick="location.href='game-type/easy/FillintheBlanks/fitb-data.html'">DS</button>
+          </div>
+        </div>
+        <!-- final exam -->
+        <div class="card" data-index="5">
+          <div class="card-gradient-square card-gradient-5"></div>
+          <i class="fa-solid fa-graduation-cap card-icon" aria-hidden="true"></i>
+          <div class="card-buttons">
+            <button onclick="location.href='game-type/FinalExam/finalexam-data.html'">Enter</button>
+          </div>
+        </div>
+      </div>
+      <button class="nav-arrow right">›</button>
+    </div>
+  </div>
+  <section>
+        <div class="wave wave1"></div>
+        <div class="wave wave2"></div>
+        <div class="wave wave3"></div>
+        <div class="wave wave4"></div>
+    </section>
+
+  <!-- User Sidebar -->
+  <div id="user-sidebar" class="user-sidebar">
+      <div class="sidebar-content">
+          <div class="sidebar-header">
+              <h3>User Menu</h3>
+              <button class="close-sidebar" id="close-sidebar">&times;</button>
+          </div>
+          <div class="sidebar-body">
+              <div class="user-info">
+                  <i class="fa-solid fa-circle-user sidebar-user-icon"></i>
+                  <p id="sidebar-username">User</p>
+              </div>
+              <div class="sidebar-options">
+                  <a href="../profile/settings.html" class="sidebar-btn" id="settings-btn">
+                      <i class="fa-solid fa-cog"></i> Settings
+                  </a>
+                  <a href="../profile/achivements.html" class="sidebar-btn" id="achievements-btn">
+                      <i class="fa-solid fa-trophy"></i> Achievements
+                  </a>
+                  <button class="sidebar-btn" id="logout-btn">
+                      <i class="fa-solid fa-sign-out-alt"></i> Logout
+                  </button>
+              </div>
+          </div>
+      </div>
+  </div>
+
+    <script src="gamesnew.js"></script>
+    <script src="../shared/sidebar.js"></script>
+    <script src="../shared/auth.js"></script>
+    <script>
+      // Flash the selected difficulty on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        var textSpan = document.getElementById('difficulty-select-text');
+        if (textSpan) {
+          textSpan.textContent = 'Easy';
+          setTimeout(function() {
+            textSpan.textContent = 'Select Difficulty Level';
+          }, 1200);
+        }
+      });
+    </script>
+ </body>
+ </html>

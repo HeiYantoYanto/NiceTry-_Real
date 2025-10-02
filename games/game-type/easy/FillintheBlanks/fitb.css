@@ -1,0 +1,49 @@
+/* Tweaks for FITB page when using the ToF layout */
+
+/* Reuse ToF background but adjust input/button row */
+.fitb__controls {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+#answer-input {
+  min-width: min(680px, 78vw);
+  max-width: 90vw;
+  padding: 18px 20px;
+  font-size: 1.5rem;
+  border-radius: 12px;
+  border: 2px solid #fff;
+  outline: none;
+  color: #fff;
+  background: #010019;
+}
+#answer-input:focus {
+  box-shadow: 0 0 0 3px rgba(124, 79, 220, 0.45);
+}
+
+/* Repurpose glowing button style via .btn.btn-true already in ToF css */
+#submit-btn {
+  margin: 40px 0 0 0;
+}
+
+/* Score tracker spacing relative to sticky navbar */
+@media (max-width: 768px) {
+  #score-tracker { top: 80px !important; right: 16px !important; padding: 10px 16px !important; font-size: 1rem !important; }
+}
+
+/* Force navbar to dark theme on this page to avoid accidental overrides */
+.navbar { background: transparent !important; }
+.navbar__container { background: #0e0e20 !important; }
+
+/* Ensure menu area doesn't inject white backgrounds */
+.navbar__menu, .dropdown .content { background: transparent !important; }
+
+/* Responsive: stack controls and make input full-width */
+@media (max-width: 900px) {
+  .fitb__controls { flex-direction: column; gap: 12px; align-items: stretch; }
+  #answer-input { width: 100%; min-width: 0; max-width: 100%; font-size: clamp(1rem, 4.5vw, 1.25rem); padding: 12px 14px; }
+  #submit-btn { width: 100%; margin-top: 8px; }
+}

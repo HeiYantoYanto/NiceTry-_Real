@@ -1,0 +1,140 @@
+* {
+    /* overflow: hidden; */
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #020024;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* start part */
+#start-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quiz-rules p{
+    color: #fff;
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+#start-btn {
+    color: #fff;
+    font-size: 2rem;
+    margin: 1rem;
+    padding: 1.5rem 3rem;
+    background: #010024;
+    border: 3px solid #fff;
+    border-radius: 15px;
+}
+#start-btn:hover {
+    transition: 0.3s all;
+    color: #010019;
+    background: #fff;
+}
+
+
+/* quiz part */
+
+#quiz-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 3rem 5rem;
+    height: 90vh;
+    width: 90vw;
+}
+
+.quiz-section {
+    display: grid;
+    background: #020024;
+    color: #fff;
+    justify-items: center;
+    min-width: 100%;
+    height: 50%;
+}
+
+#question-heading {
+    font-size: 2rem;
+}
+#question-text {
+    font-size: 3rem;
+}
+
+.answer-section {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    background: #010019;
+    justify-self: center;
+    border-radius: 20px;
+    min-width: 50%;
+    height: 50%;
+}
+
+#answer-input {
+    justify-self: center;
+    align-self: start;
+    width: 40vw;
+    margin: 3rem;
+    padding: 1.5rem 1rem 1.5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 15px;
+    background-color: #010019;
+    color: #fff;
+    border: 3px solid white;
+}
+
+#next-btn {
+    justify-self: center;
+    min-width: 15vw;
+    max-height: 8vh;
+    padding: 0;
+    color: white;
+    font-size: 2.5rem;
+    background: #010019;
+    border: 3px solid #fff;
+    border-radius: 15px;
+}
+#next-btn:hover {
+    transition: 0.3s all;
+    color: #010019;
+    background: #fff;
+}
+
+.feedback {
+    position: fixed;
+    align-self: end;
+    justify-self: center;
+    min-width: 3rem;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #fff;
+    background: #333;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 100;
+}
+.feedback.show {
+    opacity: 1;
+}
+.feedback.correct {
+    background: #4caf50;
+}
+.feedback.incorrect {
+    background: #f44336;
+}

@@ -1,0 +1,415 @@
+*{ /*The * means it applies to all elements*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #020024;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Keep navbar pinned to top on this page regardless of ancestors' overflow */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+/* Offset main content for fixed navbar height (navbar uses 10vh in shared CSS) */
+.main {
+    padding-top: 10vh;
+}
+
+#tof-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    background: transparent;
+    padding: 0 20px;
+}
+
+#tof-question {
+    text-align: center;
+    margin-bottom: 3vh;
+    color: #fff;
+    font-size: 3rem;
+}
+
+.quiz__question {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.btn {
+    margin: 100px;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    font-size: 2rem;
+}
+.btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+/* glow for True button */
+.btn-true::before {
+    content: "";
+    background: linear-gradient(45deg, #48FF00, #00FFD5, #48FF00, #00FFD5);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing-green 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+@keyframes glowing-green {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+/* glow for False button */
+.btn-false::before {
+    content: "";
+    background: linear-gradient(45deg, #FF0000, #FF7300, #FF0000, #FF7300);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing-red 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+@keyframes glowing-red {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+/* hover */
+.btn-true:hover::before {
+    opacity: 1;
+}
+.btn-false:hover::before {
+    opacity: 1;
+}
+.btn:active:after {
+    background: transparent;
+}
+.btn:active {
+    color: #000;
+    font-weight: bold;
+}
+
+
+/* mcq section */
+
+#mcq-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    background: transparent;
+    padding: 0 20px;
+}
+#mcq-question {
+    text-align: center;
+    margin-bottom: 3vh;
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 2vh;
+}
+
+.mcq__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 3vh;
+    align-items: center;
+}
+
+.btn-choice {
+    position: static;
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    width: 50vw;
+    margin: 1rem;
+}
+.btn-choice::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+/* glow */
+.btn-choice::before {
+    content: "";
+    background: linear-gradient(
+        45deg,
+        #FF0000, #FF7300, #FFFB00, #48FF00,
+        #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+@keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+
+/* hover */
+.btn-choice:hover::before {
+    opacity: 1;
+}
+.btn-choice:active:after {
+    background: transparent;
+}
+.btn-choice:active {
+    color: #000;
+    font-weight: bold;
+}
+
+.quiz__modal-content {
+    max-width: 90vw;
+}
+
+#fitb-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    background: transparent;
+    padding: 0 20px;
+}
+
+#fitb-question {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.fitb__input-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+#fitb-input {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 2px solid #333;
+    margin-right: 1rem;
+    width: 25vw;
+    background: #222;
+    color: #fff;
+}
+
+#fitb-next-btn {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 400;
+    background: #333;
+    border: none;
+    border-radius: 15px;
+    width: 10vw;
+    height: 10vh;
+    margin-right: 1rem;
+}
+
+#fitb-next-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* glow for True button */
+.btn-true::before {
+    content: "";
+    background: linear-gradient(45deg, #48FF00, #00FFD5, #48FF00, #00FFD5);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing-green 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+@keyframes glowing-green {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+/* glow for False button */
+.btn-glow::before {
+    content: "";
+    background: linear-gradient(45deg, #FF0000, #FF7300, #FF0000, #FF7300);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing-red 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+@keyframes glowing-red {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+}
+/* hover */
+.btn-glow:hover::before {
+    opacity: 1;
+}
+.btn-glow:hover::before {
+    opacity: 1;
+}
+.btn-glow:active:after {
+    background: transparent;
+}
+.btn-glow:active {
+    color: #000;
+    font-weight: bold;
+}
+
+/* Modal overlay should not push layout; center content */
+.quiz__modal {
+    position: fixed;
+    inset: 0;
+    display: none; /* toggled to flex by JS */
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.4);
+    z-index: 1500; /* above page content, below score tracker if needed */
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+    html, body { overflow-y: auto; }
+    #tof-question, #mcq-question, #fitb-question { font-size: clamp(1.1rem, 5vw, 1.6rem); }
+    .mcq__buttons, .tof__buttons, .fitb__input-row { gap: 12px; }
+    .btn, .btn-choice { margin: 0; width: 100%; max-width: 520px; font-size: clamp(1rem, 4vw, 1.25rem); padding: 12px 18px; }
+    #fitb-input { width: 100%; max-width: 100%; font-size: clamp(1rem, 4.5vw, 1.25rem); }
+    #score-tracker { top: 76px !important; right: 12px !important; padding: 8px 12px !important; font-size: 0.95rem !important; }
+}
+
+@media (max-width: 480px) {
+    .main { padding: 0 12px; }
+    .btn, .btn-choice { font-size: 1rem; padding: 10px 16px; }
+}
+
+/* 谁要 bubbles */
+/* .bubbles {
+    position: relative;
+    display: flex;
+}
+
+.bubbles span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #7c4fdc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #dc4fad44, 0 0 50px #7c4fdc, 0 0 100px #7c4fdc;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(200s /var(--i));
+}
+
+.bubbles span:nth-child(even) 
+{
+    background: #c02dff;
+    box-shadow: 0 0 0 10px #7d2dff44, 0 0 50px #c02dff, 0 0 100px #c02dff;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(100vh) scale(0);
+    }
+    100% {
+        transform: translateY(-10vh) scale(1);
+    }
+} */
+

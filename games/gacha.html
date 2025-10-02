@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gacha - NICETRY</title>
+  <link rel="stylesheet" href="../theme.css" />
+  <link rel="stylesheet" href="../profile/gacha.css" />
+  <link rel="stylesheet" href="../navbar/navbar_main.css" />
+  <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+  <style>
+    /* Allow scrolling on the gacha page (override fixed viewport styles) */
+    body[data-page="gacha"] {
+      height: auto !important;
+      min-height: 100svh !important;
+      overflow-x: hidden !important;
+      overflow-y: auto !important;
+    }
+    body[data-page="gacha"] .container {
+      height: auto !important;
+      min-height: 100vh;
+      padding-bottom: 60px; /* breathing room at bottom */
+    }
+  </style>
+</head>
+<body data-page="gacha">
+  <nav class="navbar">
+    <div class="navbar__container">
+      <a href="../index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+      <div class="navbar__toggle" id="mobile-menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </div>
+      <ul class="navbar__menu">
+        <li class="navbar__item"><a href="../index.html" class="navbar__links">Home</a></li>
+        <li class="navbar__item"><a href="../games/gamesnew.html" class="navbar__links">Games</a></li>
+        <li class="navbar__btn"><a href="../login_signup/login/login.html" class="button">Log in</a></li>
+        <li class="navbar__btn"><a href="../login_signup/signup/signup.html" class="button">Sign up</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="mask">
+      <div class="winner"></div>
+      <!-- top open shell svg from original -->
+      <svg viewBox="0 0 439 215" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M295.5 14.0103C400.3 15.2103 429.167 117.51 430.5 168.51C338.1 208.51 207.667 185.177 154 168.51C157.5 116.51 190.7 12.8103 295.5 14.0103Z" fill="white" stroke="#531028" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" />
+        <path class="open-egg-color" d="M99.1013 198.787C-10.8987 165.987 1.26801 68.7865 21.1013 24.2865C152.701 -28.5135 247.268 59.6199 278.101 110.287C264.268 153.453 209.101 231.587 99.1013 198.787Z" fill="#F3D478" />
+        <path d="M21.1013 24.2865C1.26801 68.7865 -10.8987 165.987 99.1013 198.787C209.101 231.587 264.268 153.453 278.101 110.287M21.1013 24.2865C152.701 -28.5135 247.268 59.6199 278.101 110.287M21.1013 24.2865C44.6013 69.2865 128.901 149.487 278.101 110.287" stroke="#531028" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+
+    <div class="list-wrap">
+      <input type="text" placeholder="Type prizes or names, press Enter" />
+      <div class="listBtn"><i class="fas fa-address-book fa-2x"></i></div>
+      <div class="list">
+        <ol></ol>
+      </div>
+    </div>
+
+    <div class="gachapon">
+      <svg class="switch" viewBox="0 0 154 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="76.5828" cy="77.7004" r="43.5" transform="rotate(-45 76.5828 77.7004)" fill="#C6D2D5" stroke="#57162F" stroke-width="10" />
+        <path d="M32.7422 110.934C30.399 108.591 30.399 104.792 32.7422 102.449L101.732 33.4592C104.075 31.1161 107.874 31.1161 110.217 33.4592L120.117 43.3587C122.46 45.7018 122.46 49.5008 120.117 51.844L51.127 120.834C48.7838 123.177 44.9848 123.177 42.6417 120.834L32.7422 110.934Z" fill="#C6D2D5" stroke="#57162F" stroke-width="10" />
+      </svg>
+
+      <svg class="machine" viewBox="0 0 617 979" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="308.5" cy="388.5" r="302" fill="#DEECF3" stroke="#5A1830" stroke-width="13" />
+        <g class="egg">
+          <circle class="egg-color" cx="313.5" cy="885.5" r="40.5" fill="#F3D478" stroke="#57172F" stroke-width="10" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <script src="../shared/auth.js"></script>
+  <script src="../shared/theme.js"></script>
+  <script src="../shared/sidebar.js"></script>
+  <script>
+    // Record gacha page view XP
+    if (window.Achievements && window.Achievements.recordPageView) {
+      window.Achievements.recordPageView('/games/gacha.html');
+    }
+    // Integrate original gacha logic
+    const inputValue = document.querySelector('input');
+    const egg = document.querySelector('.egg');
+    const eggColor = document.querySelector('.egg-color');
+    const openEggColor = document.querySelector('.open-egg-color');
+    const list = document.querySelector('ol');
+    const listBtn = document.querySelector('.listBtn');
+    let lotteryList = [];
+
+    function listRender() {
+      list.innerHTML = lotteryList.map((ele) => `<li>${ele}</li>`).join('');
+    }
+
+    listBtn.addEventListener('click', function () {
+      document.querySelector('.list-wrap').classList.toggle('active');
+    });
+
+    inputValue.addEventListener('keyup', function (e) {
+      if (e.key === 'Enter' && inputValue.value.trim() !== '') {
+        const lottery = inputValue.value.trim().split(' ');
+        lotteryList = lotteryList.concat(lottery);
+        inputValue.value = '';
+        listRender();
+      }
+    });
+
+    egg.addEventListener('click', function () {
+      const luckyNum = Math.floor(Math.random() * (lotteryList.length || 1));
+      const winner = lotteryList[luckyNum];
+      const hasItems = lotteryList.length >= 1;
+      const prize = hasItems ? `<span>${winner}</span>` : 'No entries';
+      document.querySelector('.winner').innerHTML = prize;
+      if (hasItems) {
+        lotteryList.splice(luckyNum, 1);
+        listRender();
+        // Reward: unlock a cosmetic frame randomly plus XP
+        unlockRandomCosmetic();
+      }
+    });
+
+    const colors = ['#E5A0B9', '#F3D478', '#9DCFE0', '#B9AED4'];
+    document.querySelector('.switch').addEventListener('click', function () {
+      const currentColor = colors[Math.floor(Math.random() * colors.length)];
+      if (eggColor) eggColor.style.fill = currentColor;
+      if (openEggColor) openEggColor.style.fill = currentColor;
+      this.classList.toggle('active');
+      setTimeout(() => this.classList.remove('active'), 700);
+      egg.classList.toggle('active');
+    });
+
+    document.querySelector('.mask').addEventListener('click', function () {
+      this.classList.toggle('active');
+    });
+
+    // Cosmetic unlocks integrate with UserProfile.flags
+    const FRAME_POOL = ['gold', 'pink', 'blue', 'purple'];
+    function unlockRandomCosmetic() {
+      const frame = FRAME_POOL[Math.floor(Math.random() * FRAME_POOL.length)];
+      if (!window.UserProfile) return;
+      const prof = window.UserProfile.get && window.UserProfile.get();
+      if (!prof) return;
+      const flags = prof.flags || {};
+      const key = `frame_${frame}`;
+      if (!flags[key]) {
+        // mark as unlocked
+        window.UserProfile.setFlag && window.UserProfile.setFlag(key, true);
+        // auto-select if no frame selected
+        if (!flags.selectedFrame) window.UserProfile.setFlag('selectedFrame', frame);
+        // some feedback
+        const box = document.querySelector('.winner');
+        if (box) {
+          box.innerHTML = `Unlocked avatar frame: <b>${frame}</b>`;
+        }
+        // grant small XP and toast via Achievements
+        if (window.Achievements && window.Achievements.awardXP) window.Achievements.awardXP(10, 'gacha');
+        // Optional: earn a new achievement on first cosmetic
+        try {
+          const state = window.Achievements.getState && window.Achievements.getState();
+          const already = state && state.achievements && state.achievements['cosmetic_1'];
+          if (!already) {
+            // Emulate an achievement earn by setting a flag in user flags; Achievements API evaluates on XP/page/click.
+            // We will piggyback a toast manually for first cosmetic.
+            window.dispatchEvent(new CustomEvent('xp:award', { detail: { amount: 0, reason: 'cosmetic-unlock' }}));
+            if (window.Achievements && window.Achievements.onEarned) {
+              // Direct toast simulation
+              const payload = { id: 'cosmetic_1', title: 'New Drip', icon: 'fa-wand-magic-sparkles', desc: 'Unlocked your first cosmetic!' };
+              // Use internal toast if available (auth.js subscribes onEarned). Just show a toast inline instead:
+              if (typeof window.showAchievementToast === 'function') {
+                window.showAchievementToast(payload);
+              }
+            }
+          }
+        } catch (e) {}
+      } else {
+        const box = document.querySelector('.winner');
+        if (box) box.innerHTML = `You already have the <b>${frame}</b> frame!`;
+      }
+      document.querySelector('.mask').classList.add('active');
+    }
+  </script>
+</body>
+</html>
