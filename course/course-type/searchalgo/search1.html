@@ -1,0 +1,128 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="search.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/searchlast.html" class="navbar__links">
+                            Introduction
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search1.html" class="navbar__links">
+                            Linear Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search2.html" class="navbar__links">
+                            Binary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search3.html" class="navbar__links">
+                            Ternary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search4.html" class="navbar__links">
+                            Jump Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search5.html" class="navbar__links">
+                            Interpolation Search
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Linear Search</h1>
+            </div>
+            <div class="main__content">
+                            <p>Linear search, also known as sequential search, is one of the most straightforward algorithms used to find a target value within a list or array. It works by systematically checking each element in the collection, one by one, from the beginning to the end until the target is found or the entire list has been traversed. Unlike more complex algorithms, linear search does not require the data to be sorted, making it highly versatile for use on both ordered and unordered datasets.<br><br>
+
+The primary advantage of linear search is its simplicity and ease of implementation. However, this comes at the cost of efficiency. In the worst-case scenario, where the target is at the end of the list or not present at all, the algorithm must examine every element, resulting in a time complexity of O(n). This makes it impractical for large datasets, where more efficient algorithms like binary search are preferred.<br><br>
+
+Despite its inefficiency, linear search remains useful in situations where data is small, unsorted, or rarely searched. It is often employed in simple applications, scripting, and as a introductory teaching tool for programming beginners. Its reliability and minimal preconditions ensure that it remains a fundamental technique in computer science.
+</p>
+            </div>
+            <div class="main__content">
+                <img src="../../../images/binarylinearweb.png" alt="Linear vs Binary Search Illustration"></img>
+            </div>
+        </div>
+        <!-- Progress Bar (hidden by default) -->
+        <div id="progress-container" style="display:none; margin: 2em 0;">
+          <label for="progress-bar">Progress:</label>
+          <progress id="progress-bar" value="0" max="100"></progress>
+          <span id="progress-value">0%</span>
+        </div>
+
+        <div class="info__container">
+            <p>This is the fifth topic for the search algorithm page</p>
+        </div>
+
+        <script>
+          sessionStorage.setItem('showProgressGain', '4'); // or '3' for games, etc.
+        </script>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (sessionStorage.getItem('isLoggedIn') === 'true') {
+        const email = sessionStorage.getItem('currentUser');
+        if (!email) return;
+
+        // Unique key for this course and user
+        const courseKey = 'visited_' + email + '_' + window.location.pathname;
+        if (!sessionStorage.getItem(courseKey)) {
+            // Increase progress by 4
+            let progress = parseInt(localStorage.getItem('progress_' + email)) || 0;
+            progress += 4;
+            if (progress > 100) progress = 100;
+            localStorage.setItem('progress_' + email, progress);
+
+            // Set flag for homepage animation
+            sessionStorage.setItem('showProgressGain', '4');
+            sessionStorage.setItem(courseKey, 'true');
+        }
+    }
+});
+</script>
+        <script src="../../../shared/progress.js"></script>
+    </body>
+</html>

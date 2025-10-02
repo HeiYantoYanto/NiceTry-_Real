@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="datastructure.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Hash Table Data Structures</h1>
+            </div>
+            <div class="main__content">
+                <p>Hash data structures, most commonly implemented as hash tables, are designed to provide fast and efficient storage and retrieval of data. They work by using a hash function that takes a key as input and computes an index where the corresponding value will be stored in an array. This design allows for nearly constant-time average complexity, O(1), for insertion, deletion, and lookup operations. In practice, this means that regardless of the number of elements, accessing data through a hash table is extremely quick, making it a preferred choice for applications where speed is critical. Examples of real-world uses include dictionaries, caches, and indexing systems in databases, where rapid key-value association is essential.<br><br>
+
+ A major challenge in hash tables arises when two different keys produce the same index, a situation known as a collision. To resolve this, hash tables employ strategies such as chaining, where collisions are handled by maintaining a linked list at the same index, or open addressing, where the algorithm searches for the next available slot in the array using techniques like linear probing, quadratic probing, or double hashing. While these methods ensure that data is not lost, they can lead to performance degradation if collisions become frequent. The efficiency of a hash table is therefore heavily dependent on the quality of the hash function, which must distribute keys as uniformly as possible to minimize clustering.<br><br>
+
+ Despite these challenges, hash data structures remain unparalleled in their ability to provide fast, scalable key-value storage and retrieval. However, they do come with limitations. In the worst case, if collisions are not well managed, operations can degrade to O(n) time complexity. Hash tables also require dynamic resizing as the number of elements grows, which can be computationally expensive. Additionally, unlike other data structures such as trees or arrays, hash tables do not preserve the order of elements, which can be a drawback for certain applications. Even with these trade-offs, the performance benefits of hash tables far outweigh their disadvantages, making them a cornerstone of modern computing and a vital tool for handling large datasets efficiently.
+
+                </p>
+
+            </div>
+            <div class="main__content">
+                <img src="../../../images/hashdataweb.png" alt="Hash Table Data Structures"></img>
+            </div>
+        </div>
+
+        <script src="../../../shared/auth.js"></script>
+    </body>
+</html>

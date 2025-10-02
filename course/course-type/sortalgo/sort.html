@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sorting - Combined</title>
+  <link rel="stylesheet" href="../data_structure/datastructure.css" />
+  <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    /* Hide any injected profile icon in this section's navbar */
+    .navbar__menu li.__logout { display: none !important; }
+  </style>
+  
+</head>
+<body>
+  <!-- Animated bg layers from datastructure pages -->
+  <div class="div1"></div>
+  <div class="div2"></div>
+  <div class="div3"></div>
+  <div class="div4"></div>
+  <div class="div5"></div>
+
+  <!-- Navbar simplified -->
+  <nav class="navbar">
+    <div class="navbar__container" style="display: flex; justify-content: space-between; align-items: center;">
+      <ul class="navbar__menu" style="display: flex; align-items: center;">
+        <li class="navbar__btn"><a href="../../../index.html#courses-section" class="button">Back</a></li>
+      </ul>
+      <div class="navbar__right">
+        <button id="topics-toggle" class="button topics-toggle-btn" aria-controls="topics" aria-expanded="false" title="Show topics"><i class="fa-solid fa-list"></i>&nbsp;Topics</button>
+      </div>
+      <!-- Removed right actions area; no profile icon in this section -->
+    </div>
+  </nav>
+
+  <div class="split-root" id="split-root">
+    <!-- Left topics -->
+    <aside class="topics" id="topics" aria-label="Topics">
+      <ul class="topic-list" id="topicList">
+        <li><a href="#quick" class="topic-item" data-file="sort1.html" aria-current="true">Quick Sort</a></li>
+        <li><a href="#bubble" class="topic-item" data-file="sort2.html">Bubble Sort</a></li>
+        <li><a href="#merge" class="topic-item" data-file="sort3.html">Merge Sort</a></li>
+        <li><a href="#selection" class="topic-item" data-file="sort4.html">Selection Sort</a></li>
+        <li><a href="#insertion" class="topic-item" data-file="sort5.html">Insertion Sort</a></li>
+        <li><a href="#heap" class="topic-item" data-file="sort6.html">Heap Sort</a></li>
+      </ul>
+    </aside>
+
+    <!-- Draggable divider -->
+    <div class="divider" id="divider" role="separator" aria-orientation="vertical" aria-label="Resize"></div>
+
+    <!-- Right content -->
+    <main class="content" id="content" tabindex="-1">
+      <div class="content-inner" id="contentInner">
+        <h1>Loading…</h1>
+      </div>
+    </main>
+  </div>
+
+  <script src="sort_algo.js"></script>
+  <script src="../../../shared/auth.js"></script>
+  
+</body>
+</html>

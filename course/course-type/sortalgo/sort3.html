@@ -1,0 +1,94 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="sort.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort1.html" class="navbar__links">
+                            Quick Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort2.html" class="navbar__links">
+                            Bubble Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort3.html" class="navbar__links">
+                            Merge Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort4.html" class="navbar__links">
+                            Selection Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort5.html" class="navbar__links">
+                            Insertion Sort
+                        </a>
+                    </li>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort6.html" class="navbar__links">
+                            Heap Sort
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Merge Sort</h1>
+            </div>
+            <div class="main__content">
+                            <p>Merge Sort is a highly efficient and well-known sorting algorithm based on the divide-and-conquer strategy. The central idea is to repeatedly break down a list into smaller sublists until each sublist contains only one element, which is trivially sorted. Once the list is divided, the algorithm gradually merges these sublists back together in sorted order, forming larger and larger sorted segments until the entire list is complete. This step-by-step merging process ensures that the final result is a fully ordered sequence, regardless of the initial arrangement of elements.<br><br>
+
+One of the key strengths of Merge Sort lies in its predictable performance. It consistently achieves a time complexity of O(n log n) in the best, average, and worst cases, making it significantly more efficient than quadratic-time algorithms like Bubble Sort or Selection Sort, especially as the size of the dataset grows. The merging process guarantees stability, meaning that elements with equal values retain their original relative positions, which can be useful in applications where order preservation matters. However, the algorithm requires additional memory proportional to the size of the list for storing temporary sublists, which can be a drawback in memory-constrained environments.<br><br>
+
+Despite its slightly more complex implementation compared to simpler algorithms, Merge Sort is widely applied in real-world systems where efficiency and reliability are crucial. It is particularly effective for sorting large files, linked lists, or data streams that cannot be processed all at once. Many standard libraries and frameworks use Merge Sort, or variations of it, as the default sorting method for handling large datasets. Its balance of efficiency, consistency, and stability makes it one of the most important algorithms in computer science, serving as both a practical tool and a foundational concept for understanding algorithm design.
+</p>
+            </div>
+            <div class="main__content">
+                <img src="../../../images/mergesortweb.png" alt="Merge Sort Illustration"></img>
+            </div>
+        </div>
+
+        <script src="../../../shared/auth.js"></script>
+    </body>
+</html>

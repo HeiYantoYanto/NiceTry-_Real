@@ -1,0 +1,91 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="search.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/searchintro.html" class="navbar__links">
+                            Introduction
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search1.html" class="navbar__links">
+                            Linear Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search2.html" class="navbar__links">
+                            Binary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search3.html" class="navbar__links">
+                            Ternary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search4.html" class="navbar__links">
+                            Jump Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search5.html" class="navbar__links">
+                            Interpolation Search
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>What Is Search Algorithm??</h1>
+            </div>
+            <div class="main__content">
+                            <p>Search algorithms are fundamental tools in computer science, designed to locate specific elements or information within a dataset. The goal of a search algorithm is to find the position of a target item or to determine whether it exists at all. Depending on how the data is organized, different search methods can be applied for efficiency. For example, when data is unsorted, simple techniques like linear search are commonly used, while sorted datasets allow more advanced algorithms such as binary search. Search algorithms are essential because they form the basis of many real-world applications, from looking up words in a dictionary to retrieving information from large databases.<br><br>
+
+There are several types of search algorithms, each with its advantages and trade-offs. Linear search works by checking each element one by one until the target is found or the list ends. While easy to implement, it has a time complexity of O(n), which becomes inefficient for large datasets. Binary search, on the other hand, divides the dataset in half repeatedly, quickly narrowing down the possible locations of the target. This method is much faster, with a time complexity of O(log n), but it requires the data to be sorted beforehand. Beyond these basic techniques, there are specialized methods such as jump search, interpolation search, and ternary search, each designed to improve efficiency in specific situations.<br><br>
+
+Search algorithms are not limited to simple lists of numbers or words; they are widely used in more complex structures. For instance, in graphs and trees, algorithms like breadth-first search (BFS) and depth-first search (DFS) are employed to traverse and locate nodes efficiently. These algorithms are crucial in fields like artificial intelligence, routing systems, and game development, where decisions depend on exploring large search spaces. The choice of search algorithm depends on the structure and size of the data, as well as the performance requirements of the application. Ultimately, search algorithms are vital for solving countless computational problems, making them an indispensable part of computer science.
+</p>
+            </div>
+            <div class="main__content">
+                <iframe src="https://www.youtube.com/embed/Hoixgm4-P4M" frameborder="0">Test</iframe>
+            </div>
+        </div>
+    </body>
+</html>

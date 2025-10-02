@@ -1,0 +1,125 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="search.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/searchlast.html" class="navbar__links">
+                            Introduction
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search1.html" class="navbar__links">
+                            Linear Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search2.html" class="navbar__links">
+                            Binary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search3.html" class="navbar__links">
+                            Ternary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search4.html" class="navbar__links">
+                            Jump Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search5.html" class="navbar__links">
+                            Interpolation Search
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Ternary Search</h1>
+            </div>
+            <div class="main__content">
+                            <p>Ternary search is a divide-and-conquer algorithm used to find the position of a target value within a sorted array. It works by repeatedly dividing the search interval into three equal parts instead of two, as in binary search. The algorithm compares the target value with the elements at two midpoints, which divide the array into three segments. Based on these comparisons, it determines which segment may contain the target and discards the other two-thirds of the search space. This process continues until the target is found or the interval becomes empty. The time complexity of ternary search is O(log₃ n), which is theoretically less efficient than binary search’s O(log₂ n) due to the higher logarithm base, but it remains efficient for large datasets. <br><br>
+
+Ternary search is particularly useful for finding the maximum or minimum value in a unimodal function, where the function first increases and then decreases (or vice versa). However, for standard search operations in sorted arrays, binary search is generally preferred due to its lower constant factors and simpler implementation. Ternary search exemplifies how divide-and-conquer strategies can be adapted to reduce problem space in logarithmic time.
+</p>
+            </div>
+            <div class="main__content">
+                <img src="../../../images/ternaryweb.jpg" alt="Ternary Search Illustration"></img>
+            </div>
+        </div>
+        <!-- Progress Bar (hidden by default) -->
+        <div id="progress-container" style="display:none; margin: 2em 0;">
+          <label for="progress-bar">Progress:</label>
+          <progress id="progress-bar" value="0" max="100"></progress>
+          <span id="progress-value">0%</span>
+        </div>
+
+        <div class="info__container">
+            <p>This is the fifth topic for the search algorithm page</p>
+        </div>
+
+        <script>
+          sessionStorage.setItem('showProgressGain', '4'); // or '3' for games, etc.
+        </script>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (sessionStorage.getItem('isLoggedIn') === 'true') {
+        const email = sessionStorage.getItem('currentUser');
+        if (!email) return;
+
+        // Unique key for this course and user
+        const courseKey = 'visited_' + email + '_' + window.location.pathname;
+        if (!sessionStorage.getItem(courseKey)) {
+            // Increase progress by 4
+            let progress = parseInt(localStorage.getItem('progress_' + email)) || 0;
+            progress += 4;
+            if (progress > 100) progress = 100;
+            localStorage.setItem('progress_' + email, progress);
+
+            // Set flag for homepage animation
+            sessionStorage.setItem('showProgressGain', '4');
+            sessionStorage.setItem(courseKey, 'true');
+        }
+    }
+});
+</script>
+        <script src="../../../shared/progress.js"></script>
+    </body>
+</html>

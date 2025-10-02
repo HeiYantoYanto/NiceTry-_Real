@@ -1,0 +1,94 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="sort.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort1.html" class="navbar__links">
+                            Quick Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort2.html" class="navbar__links">
+                            Bubble Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort3.html" class="navbar__links">
+                            Merge Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort4.html" class="navbar__links">
+                            Selection Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort5.html" class="navbar__links">
+                            Insertion Sort
+                        </a>
+                    </li>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort6.html" class="navbar__links">
+                            Heap Sort
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Insertion Sort</h1>
+            </div>
+            <div class="main__content">
+                            <p>Insertion Sort is a simple yet effective sorting algorithm that works by gradually building a sorted section of a list, one element at a time. The process begins with the assumption that the first element is already sorted. Then, for each new element in the unsorted portion, the algorithm compares it with the elements in the sorted portion and inserts it into its correct position. This step-by-step insertion creates a growing sorted list until all elements are ordered.<br><br>
+
+A helpful way to think about Insertion Sort is to compare it to sorting playing cards in your hands. Imagine you have a deck of unsorted cards. You hold the first card, treating it as your sorted group. Next, you pick up one card at a time from the unsorted pile and insert it in the correct spot among the cards already in your hand. Each insertion maintains the sorted order, and by the time all the cards are placed, your entire hand is organized. This analogy makes the algorithm easy to visualize and understand, especially for beginners.<br><br>
+
+While Insertion Sort is straightforward and efficient for small datasets, its performance is limited when dealing with larger lists. Its average and worst-case time complexity is O(n²), making it slower compared to advanced algorithms like Merge Sort or Quick Sort. However, Insertion Sort has advantages: it is simple to implement, works well on nearly sorted data, and is adaptive, meaning it becomes more efficient when the input list is already partially ordered. For these reasons, it is often used in teaching and in situations where simplicity and small input sizes make it practical.
+</p>
+            </div>
+            <div class="main__content">
+                <img src="../../../images/insertionsortweb.png" alt="Insertion Sort Illustration"></img>
+            </div>
+        </div>
+
+        <script src="../../../shared/auth.js"></script>
+    </body>
+</html>

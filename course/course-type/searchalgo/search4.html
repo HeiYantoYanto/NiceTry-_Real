@@ -1,0 +1,123 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="search.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/searchlast.html" class="navbar__links">
+                            Introduction
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search1.html" class="navbar__links">
+                            Linear Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search2.html" class="navbar__links">
+                            Binary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search3.html" class="navbar__links">
+                            Ternary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search4.html" class="navbar__links">
+                            Jump Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search5.html" class="navbar__links">
+                            Interpolation Search
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Jump Search</h1>
+            </div>
+            <div class="main__content">
+                            <p>Jump search is a searching algorithm for sorted arrays that combines linear and binary search principles. It works by jumping ahead fixed steps to reduce the number of comparisons. The algorithm divides the array into blocks of size √n and checks the last element of each block. If the target value is greater than the last element of a block, it jumps to the next block; if smaller, it performs a linear search within the current block. This approach balances the benefits of linear search’s simplicity and binary search’s efficiency. The optimal block size is √n, leading to a time complexity of O(√n), which is better than linear search’s O(n) but worse than binary search’s O(log n). <br><br>
+
+Jump search is particularly useful for scenarios where binary search is not feasible due to hardware constraints or when the array is stored in external storage where jumping is more efficient than random access. It requires fewer comparisons than linear search and avoids the recursion overhead of binary search, making it a practical choice for medium-sized datasets or environments with limited resources.
+</p>
+            </div>
+    
+        </div>
+        <!-- Progress Bar (hidden by default) -->
+        <div id="progress-container" style="display:none; margin: 2em 0;">
+          <label for="progress-bar">Progress:</label>
+          <progress id="progress-bar" value="0" max="100"></progress>
+          <span id="progress-value">0%</span>
+        </div>
+
+        <div class="info__container">
+            <p>This is the fifth topic for the search algorithm page</p>
+        </div>
+
+        <script>
+          sessionStorage.setItem('showProgressGain', '4'); // or '3' for games, etc.
+        </script>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    if (sessionStorage.getItem('isLoggedIn') === 'true') {
+        const email = sessionStorage.getItem('currentUser');
+        if (!email) return;
+
+        // Unique key for this course and user
+        const courseKey = 'visited_' + email + '_' + window.location.pathname;
+        if (!sessionStorage.getItem(courseKey)) {
+            // Increase progress by 4
+            let progress = parseInt(localStorage.getItem('progress_' + email)) || 0;
+            progress += 4;
+            if (progress > 100) progress = 100;
+            localStorage.setItem('progress_' + email, progress);
+
+            // Set flag for homepage animation
+            sessionStorage.setItem('showProgressGain', '4');
+            sessionStorage.setItem(courseKey, 'true');
+        }
+    }
+});
+</script>
+        <script src="../../../shared/progress.js"></script>
+    </body>
+</html>

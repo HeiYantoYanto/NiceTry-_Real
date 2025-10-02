@@ -1,0 +1,94 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="sort.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort1.html" class="navbar__links">
+                            Quick Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort2.html" class="navbar__links">
+                            Bubble Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort3.html" class="navbar__links">
+                            Merge Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort4.html" class="navbar__links">
+                            Selection Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort5.html" class="navbar__links">
+                            Insertion Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort6.html" class="navbar__links">
+                            Heap Sort
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Heap Sort</h1>
+            </div>
+            <div class="main__content">
+                            <p>Heap Sort is a comparison-based sorting algorithm that utilizes a binary heap data structure to efficiently sort elements. It offers a time complexity of O(n log n) in all cases, making it a reliable choice for various sorting applications.  The algorithm proceeds in two main phases:<br><br>
+
+Building a Max-Heap: <br> The initial array is transformed into a max-heap. In a max-heap, the value of each parent node is greater than or equal to the values of its child nodes. This ensures that the largest element is always at the root of the heap. This phase typically involves a bottom-up approach, starting from the last non-leaf node and "heapifying" upwards.<br><br>
+
+Sorting Phase:<br>
+First, the largest element (root of the max-heap) is swapped with the last element of the heap. Next, the size of the heap is reduced by one, effectively excluding the now-sorted largest element from further heap operations. Then, the heap property is restored by "heapifying" the new root element downwards. This process ensures that the largest remaining element is again at the root. Finally, these steps are repeated until the heap size becomes one, at which point the entire array is sorted in ascending order.<br><br>
+</p>
+            </div>
+            <div class="main__content">
+                <img src="../../../images/insertionsortweb.png" alt="Insertion Sort Illustration"></img>
+            </div>
+        </div>
+
+        <script src="../../../shared/auth.js"></script>
+    </body>
+</html>

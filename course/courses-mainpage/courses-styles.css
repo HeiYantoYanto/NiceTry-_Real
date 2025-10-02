@@ -1,0 +1,313 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+    /* overflow: hidden; */
+}
+
+html, body {
+    height: 100vh;
+    height: 100svh;
+}
+
+@media screen and (max-width: 960px){
+    .navbar__container{
+        display: flex;
+        justify-content: space-between;
+        height: 80px;
+        z-index: 1;
+        width: 100%;
+        max-width: 1300px;
+        padding: 0;
+    }
+
+    .navbar__menu{
+        display: grid;
+        grid-template-columns: auto;
+        margin: 0;
+        width: 100%;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5 ease;
+        height: 50vh;
+        z-index: -1;
+    }
+
+    .navbar__menu.active{
+        background: #131313;
+        top: 100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 50vh;
+        font-size: 1.6rem;
+
+    }
+
+    #navbar__logo {
+        padding-left: 25px;
+    }
+
+    .navbar__toggle .bar{
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.3s ease-in-out;
+        background: #6D2E46;
+    }
+
+    .navbar__item {
+        width: 100%;
+    }
+
+    .navbar__links {
+        text-align: center;
+        padding: 2rem;
+        width: 100%;
+        display: table;
+    }
+
+    #mobile-menu {
+        position: absolute;
+        top: 20%;
+        right: 5%;
+        transform: translate(5%,20%);
+    }
+
+    .navbar__btn {
+        padding-bottom: 2rem;
+    }
+
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        height: 80px;
+        margin: 0;
+
+    }
+
+    .navbar__toggle .bar{
+        display: block;
+        cursor: pointer;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    #mobile-menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    #mobile-menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+/* Courses Grid Section */
+.main {
+    max-height: 80vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}   
+.courses__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    justify-items: center;
+}
+
+.courses__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background: var(--gradient-primary);
+    /* Restore previous card width behavior */
+    width: min(22.5vw, 360px);
+    border-radius: 1rem;
+    border: 1px solid color-mix(in srgb, var(--color-primary) 25%, transparent);
+    box-shadow: 5px 5px 15px color-mix(in srgb, var(--color-primary) 25%, transparent);
+    transition: transform 0.1s ease-in-out;
+}
+
+.courses__list h1 {
+    color: var(--color-white);
+    font-size: clamp(1.25rem, 2.4vw, 2rem);
+}
+
+.courses__list:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow: 8px 8px 24px color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+
+.courses__list:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+}
+
+.course1-img {
+    width: 100%;
+    aspect-ratio: 9 / 8; /* Approximate original visual ratio (~360x320) */
+    border-radius: 10px;
+    background: #2A7B9B;
+    background: linear-gradient(40deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+    background-size: cover;
+    background-position: center;
+}
+
+.course2-img {
+    width: 100%;
+    aspect-ratio: 9 / 8;
+    border-radius: 10px;
+    background: #833AB0;
+    background: linear-gradient(204deg,rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+    background-size: cover;
+    background-position: center;
+}
+
+.course3-img {
+    width: 100%;
+    aspect-ratio: 9 / 8;
+    border-radius: 10px;
+    background: #020024;
+    background: linear-gradient(48deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fallback for browsers without aspect-ratio support */
+@supports not (aspect-ratio: 1 / 1) {
+    .course1-img, .course2-img, .course3-img {
+        position: relative;
+        height: auto; /* ensure height is driven by pseudo element */
+    }
+    .course1-img::before, .course2-img::before, .course3-img::before {
+        content: "";
+        display: block;
+        padding-top: 88.8889%; /* 9:8 ratio (height/width = 8/9) */
+    }
+}
+
+.courses__list h1 {
+    margin-top: 1.2rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+section {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    /* Use the global animated theme gradient */
+    background: var(--gradient-anim-base);
+    background-size: 800% 100%;
+    background-position: 0% 30%;
+    animation: gradientMove 12s ease infinite;
+    align-items: end;
+    overflow: hidden;
+    z-index: 1;
+    margin-top: 0;
+    margin-bottom: -5px; /* Slight overlap for seamless look */
+}
+
+section .wave{
+    /* Pin waves to the viewport bottom so body padding doesn't push them up */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100px;
+    background: url('../../images/wave.png');
+    background-size: 1000px 100px;
+    z-index: 3;
+    pointer-events: none; /* ensure waves never block clicks */
+}
+
+section .wave.wave1 {
+    animation: animate 30s linear infinite;
+    z-index: 100;
+    opacity: 1;
+    animation-delay: 0s;
+}
+
+section .wave.wave2 {
+    animation: animate2 15s linear infinite;
+    z-index: 99;
+    opacity: 0.5;
+    animation-delay: -5s;
+    bottom: 1rem;
+}
+
+section .wave.wave3 {
+    animation: animate 15s linear infinite;
+    z-index: 98;
+    opacity: 0.2;
+    animation-delay: -2s;
+    bottom: 1.2rem;
+}
+
+section .wave.wave4 {
+    animation: animate2 5s linear infinite;
+    z-index: 97;
+    opacity: 0.7;
+    animation-delay: -5s;
+    bottom: 1.5rem;
+}
+
+@keyframes animate 
+{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: 1000px;
+    }
+}
+@keyframes animate2
+{
+    0%
+    {
+        background-position-x: 0;
+    }
+    100%
+    {
+        background-position-x: -1000px;
+    }
+}
+/* Animated background gradient movement (reuse motion from homepage) */
+@keyframes gradientMove {
+    0% { background-position: 0% 30%; }
+    50% { background-position: 100% 30%; }
+    100% { background-position: 0% 30%; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    html, body { overflow-y: auto; }
+    .main { max-height: none; overflow: visible; }
+    .courses__container { grid-template-columns: 1fr 1fr; gap: 1rem; padding: 0 5%; }
+    .courses__list { width: 100%; }
+    /* Aspect ratio maintained by aspect-ratio; no explicit height here */
+    section { height: auto; min-height: 60vh; }
+}
+
+@media (max-width: 480px) {
+    .courses__container {
+        grid-template-columns: 1fr;
+        padding: 0 clamp(12px, 7vw, 28px); /* add breathing room on phones */
+    }
+}

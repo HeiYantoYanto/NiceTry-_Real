@@ -1,0 +1,90 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="search.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/searchlast.html" class="navbar__links">
+                            Introduction
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search1.html" class="navbar__links">
+                            Linear Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search2.html" class="navbar__links">
+                            Binary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search3.html" class="navbar__links">
+                            Ternary Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search4.html" class="navbar__links">
+                            Jump Search
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/searchalgo/search5.html" class="navbar__links">
+                            Interpolation Search
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Interpolation Search</h1>
+            </div>
+            <div class="main__content">
+                            <p>Interpolation search is an advanced variant of binary search designed for uniformly distributed sorted arrays. Instead of always dividing the array at the midpoint, it estimates the position of the target value using a formula: pos = low + [(target - arr[low]) * (high - low) / (arr[high] - arr[low])]. This formula calculates a probable position based on the value’s proximity to the endpoints, making the search more adaptive. If the array is uniformly distributed, interpolation search achieves an average time complexity of O(log log n), which is superior to binary search’s O(log n). However, in worst-case scenarios (e.g., non-uniform distributions), it degrades to O(n). <br><br>
+
+Interpolation search is highly efficient for large, uniformly distributed datasets, such as dictionaries or phone directories, where values are evenly spread. It requires fewer iterations than binary search but is sensitive to data distribution. The algorithm exemplifies how leveraging data characteristics can optimize search performance beyond generic divide-and-conquer methods, though it is less robust for irregularly distributed data.
+</p>
+            </div>
+            <div class="main__content">
+                <img src="../../../images/intersearchweb.png" alt="Interpolation Search Illustration"></img>
+            </div>
+        </div>
+            <script src="../../../shared/progress.js"></script>
+            </body>
+</html>

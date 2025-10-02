@@ -1,0 +1,94 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="sort.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort1.html" class="navbar__links">
+                            Quick Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort2.html" class="navbar__links">
+                            Bubble Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort3.html" class="navbar__links">
+                            Merge Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort4.html" class="navbar__links">
+                            Selection Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort5.html" class="navbar__links">
+                            Insertion Sort
+                        </a>
+                    </li>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort6.html" class="navbar__links">
+                            Heap Sort
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Bubble Sort</h1>
+            </div>
+            <div class="main__content">
+                            <p>Bubble Sort is one of the simplest and most intuitive sorting algorithms, which is why it is often taught first to students learning about algorithms. The basic idea is straightforward: repeatedly compare two adjacent elements in a list and swap them if they are in the wrong order. After each complete pass through the list, the largest unsorted element moves, or “bubbles up,” to its correct position at the end of the array. This process continues until the list is fully sorted, with each pass ensuring that more of the largest elements are placed in their proper spots.<br><br>
+
+The algorithm works by performing multiple passes over the list. If during a pass no swaps are required, it means the list is already sorted, and the process can stop early. While this makes the algorithm slightly more efficient in some cases, its general performance remains poor compared to more advanced algorithms. For a list of n elements, Bubble Sort has a worst-case and average time complexity of O(n²), which becomes very slow as the number of elements grows.<br><br>
+
+Despite its inefficiency, Bubble Sort still has educational value and helps beginners understand the concepts of comparisons, swaps, and iterative improvement. It is particularly useful for visual demonstrations, since the process of repeatedly bubbling elements makes the sorting steps easy to follow. While it is rarely used in practical applications for large datasets, it remains an important stepping stone toward understanding more efficient algorithms like Merge Sort, Quick Sort, or Heap Sort. By starting with Bubble Sort, learners gain a solid foundation in how sorting algorithms transform an unsorted sequence into an ordered one.
+</p>
+            </div>
+            <div class="main__content">
+                <iframe src="https://www.youtube.com/embed/Slo18MgCWYY" frameborder="0">Test</iframe>
+            </div>
+        </div>
+
+        <script src="../../../shared/auth.js"></script>
+    </body>
+</html>

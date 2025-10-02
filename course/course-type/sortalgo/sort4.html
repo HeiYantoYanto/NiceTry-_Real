@@ -1,0 +1,92 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Seach</title> 
+        <link rel="stylesheet" href="sort.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Animated Background Divs (should be at the top for stacking order) -->
+        <div class="div1"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__btn">
+                        <a href="../../../index.html#courses-section" class="button">
+                            Back
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort1.html" class="navbar__links">
+                            Quick Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort2.html" class="navbar__links">
+                            Bubble Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort3.html" class="navbar__links">
+                            Merge Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort4.html" class="navbar__links">
+                            Selection Sort
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort5.html" class="navbar__links">
+                            Insertion Sort
+                        </a>
+                    </li>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../../course/course-type/sortalgo/sort6.html" class="navbar__links">
+                            Heap Sort
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="main__container">
+            <div class="main__content">
+                <h1>Selection Sort</h1>
+            </div>
+            <div class="main__content">
+                            <p>Selection Sort is one of the simplest and most intuitive sorting algorithms, often introduced early when learning about sorting techniques. Its idea is very straightforward: the algorithm repeatedly looks for the smallest element in the unsorted portion of the list and then places it at the beginning of that portion. This process effectively grows the sorted section of the list from left to right. After the first pass, the smallest element is guaranteed to be in its correct final position. The algorithm then moves to the next position and repeats the process with the remaining unsorted elements until the entire list becomes sorted.<br><br>
+
+ Although easy to understand, Selection Sort is not considered efficient for large datasets. This is because it always performs O(n²) comparisons, regardless of whether the input is nearly sorted, reversed, or random. Unlike some algorithms such as Insertion Sort, Selection Sort does not gain any advantage from partially sorted input. However, one of its benefits is that it performs at most n swaps in total, which is much fewer than many other algorithms. This property makes Selection Sort useful in situations where writing data is more expensive than reading it, such as when working with flash memory or other storage devices where minimizing write operations is important.
+</p>
+            </div>
+            <div class="main__content">
+                <img src="../../../images/selectionsortweb.png" alt="Selection Sort Illustration"></img>
+            </div>
+        </div>
+
+        <script src="../../../shared/auth.js"></script>
+    </body>
+</html>
