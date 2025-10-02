@@ -1,0 +1,207 @@
+/* Settings page specific styles */
+body {
+    overflow-y: auto;
+}
+
+.settings__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: calc(12vh + env(safe-area-inset-top)) 10% calc(5vh + env(safe-area-inset-bottom));
+    background: linear-gradient(to bottom, #0e0e20 0%, #0e0e20 28%, rgba(14,14,32,0.95) 32%, rgba(14,14,32,0.7) 38%, rgba(14,14,32,0.2) 60%, transparent 100%),
+                linear-gradient(
+                    270deg,
+                    color-mix(in srgb, #6B53DE 26%, transparent),
+                    color-mix(in srgb, var(--accent-color) 26%, transparent),
+                    color-mix(in srgb, #6B53DE 26%, transparent),
+                    color-mix(in srgb, var(--accent-color) 26%, transparent)
+                );
+    background-size: 100% 100%, 800% 100%;
+    background-position: top, 0% 30%;
+    background-repeat: no-repeat;
+    animation: gradientMove 12s ease infinite;
+}
+
+.settings__header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.settings__header h1 {
+    color: #fff;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    margin-bottom: 1rem;
+}
+
+.settings__header p {
+    color: #828282;
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+}
+
+.settings__content {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.settings__section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.settings__section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.settings__section h2 {
+    color: #fff;
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.settings__option {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.settings__option label {
+    color: #fff;
+    font-size: clamp(1rem, 3.2vw, 1.1rem);
+    flex: 1;
+}
+
+.settings__option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #6B53DE;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.settings__option select {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    padding: 0.6rem 0.75rem;
+    font-size: clamp(0.95rem, 3vw, 1rem);
+}
+
+.settings__option select option {
+    background: #1a1a2e;
+    color: #fff;
+}
+
+.settings__button {
+    background: linear-gradient(145deg, #6B53DE, #5a47b8);
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+    min-height: 44px;
+}
+
+.settings__button:hover {
+    background: linear-gradient(145deg, #5a47b8, #4a3a9a);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(107, 83, 222, 0.3);
+}
+
+.settings__button.secondary {
+    background: none;
+    border: 2px solid #6B53DE;
+}
+
+.settings__button.secondary:hover {
+    background: rgba(107, 83, 222, 0.1);
+}
+
+.back__button {
+    position: fixed;
+    top: calc(12vh + env(safe-area-inset-top));
+    left: calc(5% + env(safe-area-inset-left));
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back__button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-5px);
+}
+
+/* Phones */
+@media screen and (max-width: 480px) {
+    .settings__container {
+        padding: calc(11vh + env(safe-area-inset-top)) 6% calc(5vh + env(safe-area-inset-bottom));
+    }
+
+    .settings__header h1 {
+        font-size: clamp(2rem, 6vw, 2.5rem);
+    }
+
+    .settings__content {
+        padding: 1.25rem;
+    }
+
+    .settings__option {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .back__button {
+        top: calc(11vh + env(safe-area-inset-top));
+        left: calc(4% + env(safe-area-inset-left));
+        font-size: 0.95rem;
+    }
+}
+
+/* Small tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .settings__container { padding: calc(12vh + env(safe-area-inset-top)) 8% calc(5vh + env(safe-area-inset-bottom)); }
+}
+
+/* Landscape mobile */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .settings__container { padding-top: calc(10vh + env(safe-area-inset-top)); }
+    .back__button { top: calc(10vh + env(safe-area-inset-top)); }
+}
+
+/* Larger screens: present options in two columns when room allows */
+@media screen and (min-width: 1024px) {
+    .settings__content { max-width: 960px; }
+    .settings__section .settings__option { display: grid; grid-template-columns: 1fr auto; align-items: center; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .settings__button:hover { transform: none; box-shadow: none; }
+}

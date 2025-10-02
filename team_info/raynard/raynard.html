@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title when hovered-->
+    <title>Raynard</title> 
+    <link rel="stylesheet" href="raynard.css">
+
+    <!-- This is for symbols-->
+    <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+    <!-- This is for Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar Section-->
+    <nav class="navbar">
+        <a href="../../index.html">< Back</a>
+        <div class="navbar__right">
+            <div class="dropdown">
+                <span class="dropdown__toggle">My Other Teammates</span>
+                <div class="dropdown__menu">
+                    <a href="../andrew/andrew.html">廖维汉</a>
+                    <a href="../bevan/bevan.html">唐杨恩</a>
+                    <a href="../ferdinand/ferdinand.html">陈德辉</a>
+                    <a href="../hardian/hardian.html">柯玉甹</a>
+                    <a href="../ken/ken.html">黄明亮</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+        
+        <!-- Hero Section-->
+    <div class="main__top">
+        <div class="main__text">
+            <h1>“注意安全"</h1>
+            <h2>苏伟全 - Audio, Programmer</h2>
+        </div>
+        <div class="main__image">
+            <img src="../../images/raynard.png" alt="">
+        </div>
+    </div>
+    
+    <div class="main__bottom">
+        <div class="mixer">
+            <img src="../../images/raynardpic-down.jpg" alt="" class="fade-in-bottom">
+        </div>
+        <div class="paragraph">
+            <div class="aboutme-bar">
+                <div class="aboutme-scroll">
+                    <span>ABOUT ME&nbsp;&nbsp;&nbsp;</span><span>ABOUT ME&nbsp;&nbsp;&nbsp;</span><span>ABOUT ME&nbsp;&nbsp;&nbsp;</span><span>ABOUT ME&nbsp;&nbsp;&nbsp;</span><span>ABOUT ME&nbsp;&nbsp;&nbsp;</span><span>ABOUT ME&nbsp;&nbsp;&nbsp;</span><span>ABOUT ME&nbsp;&nbsp;&nbsp;</span><span>ABOUT ME&nbsp;&nbsp;&nbsp;</span>
+                </div>
+            </div>
+            <p>
+                Hello everyone, my name is Raynard Soegandha. I am 18 years old and currently pursuing a Computer Science degree at the Beijing Institute of Technology. Since childhood, I have always been fascinated by technology. Growing up with easy access to computers and surrounded by people skilled in technology and the Internet of Things, I quickly developed a strong interest in computers.<br><br>
+
+                My real journey into programming began in high school when I enrolled in my first programming class. That experience sparked my passion for coding and problem-solving. The first language I learned was Python, which gave me a solid foundation to understand programming logic, even though I did not progress very far at the beginning. Later, in 10th grade, I challenged myself to learn C++. At first, I struggled with its complexity, but through tutorials, videos, and resources like w3schools.com, I gradually improved and began creating simple programs. This experience showed me the joy of continuously learning and overcoming challenges.<br><br>
+
+                Currently, in this website-making project, my role is as a coder. This requires me to dive deeper into web development, explore new coding techniques, and understand how websites function from the ground up. I enjoy this role greatly because it allows me to apply my skills in a practical way while continuing to learn more about programming and web technologies. I believe working on projects like this is one of the best ways to grow as a programmer.<br><br>
+
+                Looking ahead, I am very excited to collaborate with my teammates not only on this project but also on many more to come. I look forward to honing my coding skills, learning new technologies, and building meaningful projects together.
+            </p>
+        </div>
+    </div>
+
+    <script src="raynard.js" defer></script>
+    <script>
+    // Fade in bottom image when scrolled into view
+    document.addEventListener('DOMContentLoaded', function() {
+        var img = document.querySelector('.mixer img.fade-in-bottom');
+        if (!img) return;
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    img.classList.add('visible');
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.4 });
+        observer.observe(img);
+    });
+    </script>
+</body>
+</html>

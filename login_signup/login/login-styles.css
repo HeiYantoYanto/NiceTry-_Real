@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+html, body {
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+}
+
+/* Sign Up Main Container */
+
+.main {
+    background-color: #020024;
+}
+
+.signup__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-left: clamp(4%, 10%, 12%);
+    padding-right: clamp(4%, 10%, 12%);
+    max-width: 100%;
+    max-height: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 100svh;
+
+    /* Moving gradient background */
+    background:
+        linear-gradient(
+            to bottom,
+            #0e0e20 0%,
+            #0e0e20 20%,
+            rgba(14,14,32,0.95) 32%,
+            rgba(14,14,32,0.7) 70%,
+            rgba(14,14,32,0.5) 90%,
+            transparent 100%
+        ),
+        linear-gradient(
+            270deg,
+            color-mix(in srgb, #6B53DE 26%, transparent),
+            color-mix(in srgb, var(--accent-color) 26%, transparent),
+            color-mix(in srgb, #6B53DE 26%, transparent),
+            color-mix(in srgb, var(--accent-color) 26%, transparent)
+        );
+    background-size:
+        100% 100%, 800% 100%;
+    background-position:
+        top, 0% 30%;
+    background-repeat: no-repeat;
+    animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: top, 0% 30%;
+    }
+    50% {
+        background-position: top, 100% 30%;
+    }
+    100% {
+        background-position: top, 0% 30%;
+    }
+}
+
+.signup__form {
+    text-align: left;
+}
+
+.signup__image img{
+    max-width: 100%;
+    height: auto;
+}
+
+.signup__form {
+    color: #fff;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+
+.signup__form h2 {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-top: -5rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+.signup__form input {
+    margin-bottom: 1rem;
+    width: 80%;
+    height: 3.5rem;
+    border-radius: 60px;
+    border: 3px solid #6B53DE;
+    background: none;
+    color: #fff;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    padding-left: 1.5rem;
+}
+
+.signup__form input:focus {
+    outline: none;
+    border: 3px solid #6B53DE;
+    background: none;
+    color: #fff;
+}
+
+#have__account {
+    width: 80%;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.login__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    height: 3.5rem;
+    width: 80%;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    background: #6B53DE;
+    color: #fff;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    cursor: pointer;
+    margin-bottom: 2rem;
+    min-height: 48px;
+}
+
+.login__btn:hover {
+    background: #D5B9B2;
+    transition: all 0.1s ease;
+}
+
+#login__link {
+    background: #fff;
+    color: #6D2E46;
+    border: 2px solid #6D2E46;
+    font-weight: bold;
+}
+
+#login__link:hover {
+    background: #ECE2D0;
+    border-color: #6D2E46;
+    transition: all 0.3s ease;
+}
+
+.orb-3d {
+    position: absolute;
+    scale: 1.2;
+    right: -0%;
+    top: 5%;
+    z-index: 0;
+}
+
+/* Hide the 3D orb on small screens to reduce clutter and improve performance */
+@media (max-width: 768px) {
+    .orb-3d {
+        display: none !important;
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    html, body { overflow-y: auto; }
+    .signup__container {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.25rem, 4vw, 2rem);
+        padding-left: clamp(5%, 8%, 10%);
+        padding-right: clamp(5%, 8%, 10%);
+        padding-top: calc(12vh + env(safe-area-inset-top));
+        padding-bottom: calc(6vh + env(safe-area-inset-bottom));
+        height: auto;
+        min-height: 100svh;
+    }
+    .signup__image { order: -1; }
+    .signup__form { width: 100%; }
+    .signup__form input, .login__btn { width: 100%; }
+}
+
+@media screen and (max-width: 480px) {
+    .signup__form h2 { margin-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .main { animation: none; }
+}

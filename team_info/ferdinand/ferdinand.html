@@ -1,0 +1,137 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Ferdinand</title> 
+    <link rel="stylesheet" href="ferdinand.css">
+    <!-- Desktop-only overrides to match the original layout on large screens -->
+    <link rel="stylesheet" href="ferdinand-desktop.css" media="(min-width: 1200px)">
+        <link rel="stylesheet" href="../../navbar/navbar_main.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="../../index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="../../index.html" class="navbar__links">
+                            Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <button>Team Info</button>
+                        <div class="content">
+                            <a href="../ferdinand/ferdinand.html">陈德辉</a>
+                            <a href="../hardian/hardian.html">柯玉甹</a>
+                            <a href="../ken/ken.html">黄明亮</a>
+                            <a href="../raynard/raynard.html">苏伟全</a>
+                            <a href="../andrew/andrew.html">廖伟汉</a>
+                            <a href="../bevan/bevan.html">唐杨恩</a>
+                        </div>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../index.html#courses-section" class="navbar__links">
+                            Course
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../games/gamesnew.html" class="navbar__links">
+                            Games
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="../../login_signup/login/login.html" class="button">
+                            Log in
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="../../login_signup/signup/signup.html" class="button">
+                            Sign up                    
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+            
+            <!-- Hero Section-->
+            <div class="main">
+                <div class="main__container">
+                    <!-- Clash Royale arena background tiles -->
+                    <div class="cro-arena" aria-hidden="true"></div>
+                    <div class="main__content">
+                        <div class="royale-card" aria-label="Royale style card">
+                            <img src="../../images/ferdinand.png" alt="Ferdinand portrait" class="royale-card__img">
+                        </div>
+                    </div>
+                    <div class="main__column">
+                        <div class="crown-badge" title="King's Crown" aria-hidden="true"></div>
+                        <h1>
+                            陈德辉 - Writer, UI Designer
+                        </h1>
+                        <h2>
+                            "Gorilla is my favorite animal"
+                        </h2>
+                        <p>
+                            My name is 陈德辉, also known as Ferdinand Antollin Tanojo. I am a second year student taking Computer Science at BIT from Indonesia. My hobbies are designing and arranging things to detail. That's why I elected to be a designer for this project, as I believe I can showcase my skills to make this website good looking. <br><br>
+
+                            As part of the website project, our team placed strong emphasis on values such as communication, collaboration, and accountability. Each member contributed their strengths, and as a group we learned how important it is to share ideas openly and respect diverse perspectives. Our teamwork allowed us to tackle problems more efficiently and deliver results that reflected everyone's input.<br><br>
+
+                            As the designer of the website, I learned how crucial it is to combine usability with visual appeal. I had to think not only about colors, fonts, and layouts but also about how users would interact with the site. This experience taught me that design is not just about making something look good—it is about improving the overall user experience. I also realized the importance of adapting to feedback and being flexible when ideas change. Ultimately, the project taught me the value of creativity, teamwork, and continuous learning in building meaningful digital products.
+                        </p>
+                    </div>
+                    <!-- Elixir bar at bottom -->
+                    <div class="elixir-bar" aria-hidden="true">
+                        <div class="elixir-fill"></div>
+                        <div class="elixir-orb"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Sidebar -->
+            <div id="user-sidebar" class="user-sidebar">
+                <div class="sidebar-content">
+                    <div class="sidebar-header">
+                        <h3>User Menu</h3>
+                        <button class="close-sidebar" id="close-sidebar">&times;</button>
+                    </div>
+                    <div class="sidebar-body">
+                        <div class="user-info">
+                            <i class="fa-solid fa-circle-user sidebar-user-icon"></i>
+                            <p id="sidebar-username">User</p>
+                        </div>
+                        <div class="sidebar-options">
+                            <a href="../../settings.html" class="sidebar-btn" id="settings-btn">
+                                <i class="fa-solid fa-cog"></i> Settings
+                            </a>
+                            <a href="../../achivements.html" class="sidebar-btn" id="achievements-btn">
+                                <i class="fa-solid fa-trophy"></i> Achievements
+                            </a>
+                            <button class="sidebar-btn" id="logout-btn">
+                                <i class="fa-solid fa-sign-out-alt"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="app.js"></script>
+            <script src="../../shared/sidebar.js"></script>
+            <script src="../../shared/auth.js"></script>
+    </body>
+    </html>

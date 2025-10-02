@@ -1,0 +1,410 @@
+:root{
+    --nav-color: #CEBEBE;
+    --text-color: #ECE2D0;
+    --main-color: #6D2E46;
+    --secondary-color: #A26769;
+    --third-color: #D5B9B2;
+}
+
+img {
+    width: 25vw;
+    height: 50vh;
+}
+
+html, body {
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
+}
+
+*{ /*The * means it applies to all elements*/
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Kumbh Sans', sans-serif;
+    }   
+
+        /* Hero Sec CSS*/
+
+    .main__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-self: center;
+        align-items: center;
+        height: 90vh;
+        background-color: transparent;
+        z-index: 1;
+        width: 100vw;
+    }
+
+    .main__row {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        margin-bottom: 4rem;
+    }
+
+    .main__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* vertical centering */
+        align-items: center;     /* horizontal centering */
+        gap: 2em;
+        color: var(--text-color);
+    }
+
+    .main__column h1 {
+        font-size: 3rem;
+    }
+
+    .main__column h2 {
+        font-size: 2rem;
+    }
+     
+    .main__column p {
+        text-align: center;
+        background-color: rgba(213, 185, 178, 0.3); /*so translucent*/
+        padding: 1rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-width: 700px;
+    }   
+
+    .main__content img{
+        grid-area: img;
+        border: 10px solid var(--third-color);
+        align-self: center; /* Center the image vertically */
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 8px 16px #131313;
+        margin-top: 20px;
+        margin-left: 180px;
+        position: relative;
+        z-index: 200;
+    }
+
+    /* ==============================
+       RESPONSIVE DESIGN - Mobile-First
+       ============================== */
+
+    /* Mobile phones (320px - 480px) */
+    @media screen and (max-width: 480px) {
+        html, body {
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        img {
+            width: clamp(70vw, 80vw, 90vw);
+            height: clamp(30vh, 35vh, 40vh);
+        }
+
+        .main__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            padding: clamp(1rem, 2rem, 3rem);
+            gap: clamp(1rem, 2rem, 3rem);
+        }
+
+        .main__column {
+            gap: clamp(1em, 1.5em, 2em);
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .main__column h1 {
+            font-size: clamp(1.8rem, 2.2rem, 2.5rem);
+            text-align: center;
+            position: relative;
+            z-index: 200;
+        }
+
+        .main__column h2 {
+            font-size: clamp(1.4rem, 1.6rem, 1.8rem);
+            text-align: center;
+            position: relative;
+            z-index: 200;
+        }
+     
+        .main__column p {
+            text-align: center;
+            background-color: rgba(213, 185, 178, 0.4);
+            padding: clamp(0.8rem, 1rem, 1.2rem);
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            width: 100%;
+            font-size: clamp(0.9rem, 1rem, 1.1rem);
+            line-height: 1.5;
+            border-radius: 8px;
+            position: relative;
+            z-index: 200;
+        }   
+
+        .main__content img {
+            border-width: clamp(4px, 6px, 8px);
+            margin: 0 auto;
+            display: block;
+            border-radius: clamp(8px, 10px, 12px);
+            box-shadow: 0 4px 12px rgba(19, 19, 19, 0.8);
+        }
+
+        #moon {
+            width: clamp(60px, 70px, 80px);
+            height: clamp(60px, 70px, 80px);
+            top: clamp(40px, 60px, 80px);
+            left: clamp(10px, 20px, 30px);
+        }
+    }
+
+    /* Tablets (481px - 768px) */
+    @media screen and (min-width: 481px) and (max-width: 768px) {
+        html, body {
+            overflow-y: auto;
+        }
+
+        img {
+            width: clamp(50vw, 60vw, 70vw);
+            height: clamp(35vh, 40vh, 45vh);
+        }
+
+        .main__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            padding: clamp(2rem, 3rem, 4rem);
+            gap: clamp(2rem, 3rem, 4rem);
+        }
+
+        .main__column {
+            gap: clamp(1.5em, 2em, 2.5em);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .main__column h1 {
+            font-size: clamp(2.2rem, 2.5rem, 2.8rem);
+            text-align: center;
+            position: relative;
+            z-index: 200;
+        }
+
+        .main__column h2 {
+            font-size: clamp(1.6rem, 1.8rem, 2rem);
+            text-align: center;
+            position: relative;
+            z-index: 200;
+        }
+     
+        .main__column p {
+            text-align: center;
+            background-color: rgba(213, 185, 178, 0.35);
+            padding: clamp(1rem, 1.2rem, 1.4rem);
+            word-break: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            font-size: clamp(1rem, 1.1rem, 1.2rem);
+            line-height: 1.6;
+            border-radius: 10px;
+            position: relative;
+            z-index: 200;
+        }   
+
+        .main__content img {
+            border-width: clamp(6px, 8px, 10px);
+            margin: 0 auto;
+            display: block;
+            border-radius: clamp(10px, 12px, 14px);
+            box-shadow: 0 6px 14px rgba(19, 19, 19, 0.7);
+        }
+
+        #moon {
+            width: clamp(80px, 90px, 100px);
+            height: clamp(80px, 90px, 100px);
+            top: clamp(60px, 70px, 80px);
+            left: clamp(20px, 30px, 40px);
+        }
+    }
+
+    /* Small laptops and large tablets (769px - 1024px) */
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+        img {
+            width: clamp(30vw, 35vw, 40vw);
+            height: clamp(40vh, 45vh, 50vh);
+        }
+
+        .main__container {
+            grid-template-columns: 1fr 1fr;
+            gap: clamp(2rem, 3rem, 4rem);
+            padding: clamp(1rem, 2rem, 3rem);
+        }
+
+        .main__column h1 {
+            font-size: clamp(2.5rem, 2.8rem, 3rem);
+        }
+
+        .main__column h2 {
+            font-size: clamp(1.8rem, 2rem, 2.2rem);
+        }
+     
+        .main__column p {
+            font-size: clamp(1rem, 1.1rem, 1.2rem);
+            padding: clamp(1rem, 1.2rem, 1.4rem);
+            max-width: clamp(500px, 600px, 700px);
+        }   
+
+        .main__content img {
+            margin-left: clamp(50px, 100px, 150px);
+            border-width: clamp(8px, 10px, 12px);
+        }
+    }
+
+    /* Large screens (1025px+) */
+    @media screen and (min-width: 1025px) {
+        .main__column h1 {
+            font-size: clamp(2.8rem, 3rem, 3.2rem);
+        }
+
+        .main__column h2 {
+            font-size: clamp(2rem, 2.2rem, 2.4rem);
+        }
+     
+        .main__column p {
+            font-size: clamp(1.1rem, 1.2rem, 1.3rem);
+            line-height: 1.7;
+        }   
+
+        .main__content img {
+            margin-left: clamp(150px, 180px, 220px);
+        }
+    }
+
+    /* Landscape orientation adjustments */
+    @media screen and (orientation: landscape) and (max-height: 500px) {
+        .main__container {
+            height: auto;
+            min-height: 100vh;
+            padding: clamp(1rem, 1.5rem, 2rem);
+        }
+
+        .main__column {
+            gap: clamp(0.8em, 1em, 1.2em);
+        }
+
+        .main__column h1 {
+            font-size: clamp(1.6rem, 1.8rem, 2rem);
+        }
+
+        .main__column h2 {
+            font-size: clamp(1.3rem, 1.4rem, 1.5rem);
+        }
+     
+        .main__column p {
+            font-size: clamp(0.9rem, 1rem, 1.1rem);
+            line-height: 1.4;
+        }   
+
+        #moon {
+            width: clamp(50px, 60px, 70px);
+            height: clamp(50px, 60px, 70px);
+            top: clamp(20px, 30px, 40px);
+        }
+    }
+
+    /* Ultra-wide screens */
+    @media screen and (min-aspect-ratio: 21/9) {
+        .main__container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+    }
+
+    /* High DPI / Retina display optimizations */
+    @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+        .main__content img {
+            border-width: 8px;
+        }
+
+        .main__column p {
+            border: 1px solid rgba(213, 185, 178, 0.2);
+        }
+    }
+
+    /* Accessibility: Prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .twinkling,
+        .clouds,
+        #moon {
+            animation-duration: 0.1s;
+        }
+
+        #moon {
+            transition-duration: 0.1s;
+        }
+    }
+
+    
+    @keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+#moon {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle at 30% 30%, #fff 70%, #e0e0e0 100%);
+    border-radius: 50%;
+    box-shadow: 0 0 60px 20px #fff8, 0 0 120px 40px #fff4;
+    z-index: 101;
+    cursor: grab;
+    transition: box-shadow 0.2s;
+}
+#moon:active {
+    cursor: grabbing;
+    box-shadow: 0 0 80px 30px #fff, 0 0 160px 60px #fff6;
+}
+
+.stars {
+  background: transparent url(../../images/stars.png) repeat top center;
+  z-index:100;
+}
+
+.twinkling{
+  background:transparent url(images/twinkling.png) repeat top center;
+  z-index:100;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+    background:transparent url(../../images/clouds.png) repeat top center;
+    z-index:2;
+    opacity: .4;
+    animation:move-clouds-back 200s linear infinite;
+}

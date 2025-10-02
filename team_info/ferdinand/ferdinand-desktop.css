@@ -1,0 +1,60 @@
+/* Desktop-only overrides to match the original full-screen design */
+
+/* Layout container: full width, centered items */
+.main__container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding-bottom: 48px;
+    width: 100vw; /* original was full viewport width */
+    max-width: none;
+}
+
+/* Restore arena background to original full-bleed behavior */
+.cro-arena{
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: #102a43;
+    background-image:
+        linear-gradient(45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.06) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.06) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0;
+    filter: saturate(120%);
+}
+
+/* Restore original card frame placement */
+.main__content .royale-card{
+    width: fit-content;
+    margin-top: 20px;
+    margin-left: 180px;
+}
+
+/* Original image sizing inside card */
+.royale-card__img {
+    width: 25vw;
+    height: 50vh;
+    object-fit: cover;
+}
+
+/* Original image margins and border presentation */
+.main__content img,
+.royale-card__img{
+    margin-left: 10px;
+}
+
+/* Original text column alignment */
+.main__column{
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    text-align: center;
+}
+
+.main__column p{
+    text-align: left;
+    max-width: 900px;
+}

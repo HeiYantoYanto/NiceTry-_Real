@@ -1,0 +1,385 @@
+/* Global theme variables */
+:root {
+	/* Core palette */
+	--color-primary: #6B53DE;
+	--color-primary-2: #9B7BFF;
+	--color-gold: #EFAB10;
+	--color-white: #ffffff;
+	--color-black: #000000;
+
+	/* Site-wide accent (was yellow/gold in UI) */
+	--accent-color: var(--color-gold);
+
+	/* Backgrounds */
+	--color-bg-hero: #020024;
+	--color-bg-deep: #0e0e20;
+	--color-panel-1: #1a1a2e;
+	--color-panel-2: #16213e;
+
+	/* Accents & utility */
+	--color-muted: #828282;
+	--color-lavender: #e6e6fa;
+	--color-success: #4caf50;
+	--color-blue-1: #3F5EFB;
+	--color-pink-1: #FC466B; /* rgba(252,70,107,1) */
+	--color-text-dark: #222222;
+		--color-gray-1: #333333;
+		--color-gray-2: #131313;
+		--color-gray-3: #0f0f0f;
+		--color-yellow: #FFD700; /* coin */
+		/* Rarity colors */
+		--rarity-common: #95e1d3;
+		--rarity-uncommon: #4ecdc4;
+		--rarity-rare: #ffd93d;
+		--rarity-legendary: #ff6b6b;
+		--rarity-mythic: #e056fd;
+
+	/* Common alpha colors */
+	--alpha-overlay-75: rgba(17, 17, 26, 0.75);
+	--alpha-primary-06: rgba(107, 83, 222, 0.06);
+	--alpha-primary-10: rgba(107, 83, 222, 0.10);
+	--alpha-primary-18: rgba(107, 83, 222, 0.18);
+	--alpha-primary-26: rgba(107, 83, 222, 0.26);
+	--alpha-primary-40: rgba(107, 83, 222, 0.40);
+	--alpha-white-05: rgba(255, 255, 255, 0.05);
+	--alpha-white-10: rgba(255, 255, 255, 0.10);
+	--alpha-white-15: rgba(255, 255, 255, 0.15);
+	--alpha-white-20: rgba(255, 255, 255, 0.20);
+	--alpha-white-30: rgba(255, 255, 255, 0.30);
+
+	/* Gradients */
+	--gradient-primary: linear-gradient(90deg, var(--color-primary), var(--color-primary-2));
+	--gradient-hero: radial-gradient(circle, var(--color-blue-1) 0%, var(--color-pink-1) 100%);
+	--gradient-anim-base: linear-gradient(270deg, color-mix(in srgb, var(--color-primary) 26%, transparent), color-mix(in srgb, var(--accent-color) 26%, transparent), color-mix(in srgb, var(--color-primary) 26%, transparent), color-mix(in srgb, var(--accent-color) 26%, transparent));
+
+	/* Page-scoped tokens (override per page) */
+	--page-title-color: var(--color-white);
+	--page-accent: var(--color-primary);
+}
+
+/* ==============================
+   Page color overrides by page
+   ============================== */
+body[data-page="home"] {
+	--page-title-color: var(--color-white);
+	--page-accent: var(--accent-color);
+}
+
+body[data-page="gacha"] {
+	--page-title-color: var(--accent-color);
+	--page-accent: var(--accent-color);
+}
+
+/* Add more pages as needed, for example:
+body[data-page="games"] { --page-title-color: #38bdf8; --page-accent: #38bdf8; }
+body[data-page="profile"] { --page-title-color: var(--accent-color); --page-accent: var(--accent-color); }
+*/
+
+body[data-page="profile"] {
+	--page-title-color: var(--accent-color);
+	--page-accent: var(--accent-color);
+}
+
+/* ==============================
+   Theme variants (accent-focused)
+   Switch with: <html data-theme="...">
+   ============================== */
+html[data-theme="purple"] {
+	--color-primary: #6B53DE;
+	--color-primary-2: #9B7BFF;
+	--gradient-primary: linear-gradient(90deg, #6B53DE, #9B7BFF);
+	--gradient-anim-base: linear-gradient(270deg, color-mix(in srgb, #6B53DE 26%, transparent), color-mix(in srgb, var(--accent-color) 26%, transparent), color-mix(in srgb, #6B53DE 26%, transparent), color-mix(in srgb, var(--accent-color) 26%, transparent));
+}
+
+html[data-theme="ocean"] {
+	--color-primary: #00BCD4; /* cyan */
+	--color-primary-2: #2196F3; /* blue */
+	--gradient-primary: linear-gradient(90deg, #00BCD4, #2196F3);
+	--gradient-anim-base: linear-gradient(270deg, color-mix(in srgb, #00BCD4 26%, transparent), color-mix(in srgb, #2196F3 26%, transparent), color-mix(in srgb, #00BCD4 26%, transparent), color-mix(in srgb, #2196F3 26%, transparent));
+}
+
+html[data-theme="sunset"] {
+	--color-primary: #FF6B6B; /* coral */
+	--color-primary-2: #FFA62B; /* amber */
+	--gradient-primary: linear-gradient(90deg, #FF6B6B, #FFA62B);
+	--gradient-anim-base: linear-gradient(270deg, color-mix(in srgb, #FF6B6B 26%, transparent), color-mix(in srgb, #FFA62B 26%, transparent), color-mix(in srgb, #FF6B6B 26%, transparent), color-mix(in srgb, #FFA62B 26%, transparent));
+}
+
+html[data-theme="matrix"] {
+	--color-primary: #00FF88; /* green */
+	--color-primary-2: #00CC66; /* darker green */
+	--gradient-primary: linear-gradient(90deg, #00FF88, #00CC66);
+	--gradient-anim-base: linear-gradient(270deg, color-mix(in srgb, #00FF88 26%, transparent), color-mix(in srgb, #00CC66 26%, transparent), color-mix(in srgb, #00FF88 26%, transparent), color-mix(in srgb, #00CC66 26%, transparent));
+}
+
+/* ==============================
+	 Global progress bar component
+	 ============================== */
+#progress-container {
+	position: fixed;
+	bottom: 3vh;
+	right: 3vw;
+	z-index: 9999;
+	width: 12vw;
+	height: 3vh;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+#progress-bar-bg {
+	background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+	border-radius: 1em;
+	border: 3px solid color-mix(in srgb, var(--color-primary) 40%, transparent);
+	box-shadow: 0 2px 12px color-mix(in srgb, var(--color-primary) 25%, transparent);
+	padding: 1.2em 2em;
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+#progress-bar {
+	width: 70%;
+	height: 1em;
+	appearance: none;
+	-webkit-appearance: none;
+	accent-color: var(--color-primary);
+	background: linear-gradient(90deg, color-mix(in srgb, var(--color-primary) 10%, transparent), color-mix(in srgb, var(--color-primary) 20%, transparent));
+	border-radius: 1em;
+	margin-right: 1em;
+	transition: value 0.5s;
+}
+
+/* Cross-browser theming for progress value */
+#progress-bar::-webkit-progress-bar {
+	background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+	border-radius: 1em;
+}
+#progress-bar::-webkit-progress-value {
+	background: var(--color-primary);
+	border-radius: 1em;
+}
+#progress-bar::-moz-progress-bar {
+	background: var(--color-primary);
+	border-radius: 1em;
+}
+
+#progress-value {
+	font-weight: bold;
+	font-size: 1em;
+	color: var(--color-white);
+	margin-right: 0em;
+}
+
+#progress-gain {
+	font-size: 1.5em;
+	color: var(--color-success);
+	font-weight: bold;
+	margin-left: 0.5em;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+/* Custom progress fallback (div-based) */
+#custom-progress {
+	width: 70%;
+	height: 1em;
+	background: color-mix(in srgb, var(--color-primary) 8%, transparent);
+	border-radius: 1em;
+	margin-right: 1em;
+	position: relative;
+	overflow: hidden;
+	border: 2px solid color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+#custom-progress .fill {
+	position: absolute;
+	left: 0; top: 0; bottom: 0;
+	width: 0%;
+	background: var(--gradient-primary);
+	border-radius: 1em;
+	box-shadow: inset 0 0 6px var(--alpha-primary-18);
+	transition: width 0.4s ease;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN - Mobile-First
+   ============================== */
+
+/* Mobile phones (320px - 480px) */
+@media (max-width: 480px) {
+	#progress-container {
+		bottom: clamp(2vh, 3vh, 4vh);
+		right: clamp(2vw, 3vw, 4vw);
+		width: clamp(35vw, 40vw, 45vw);
+		height: clamp(4vh, 5vh, 6vh);
+	}
+
+	#progress-bar-bg {
+		padding: clamp(0.8em, 1em, 1.2em) clamp(1.2em, 1.5em, 1.8em);
+		border-width: 2px;
+	}
+
+	#progress-bar {
+		width: 65%;
+		height: clamp(0.8em, 1em, 1.2em);
+		margin-right: clamp(0.5em, 0.8em, 1em);
+	}
+
+	#progress-value {
+		font-size: clamp(0.8em, 0.9em, 1em);
+	}
+
+	#progress-gain {
+		font-size: clamp(1.2em, 1.3em, 1.4em);
+		margin-left: clamp(0.3em, 0.4em, 0.5em);
+	}
+
+	#custom-progress {
+		width: 65%;
+		height: clamp(0.8em, 1em, 1.2em);
+		margin-right: clamp(0.5em, 0.8em, 1em);
+		border-width: 1px;
+	}
+}
+
+/* Tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+	#progress-container {
+		bottom: clamp(2.5vh, 3vh, 3.5vh);
+		right: clamp(2.5vw, 3vw, 3.5vw);
+		width: clamp(18vw, 22vw, 26vw);
+		height: clamp(3.5vh, 4vh, 4.5vh);
+	}
+
+	#progress-bar-bg {
+		padding: clamp(1em, 1.2em, 1.4em) clamp(1.5em, 1.8em, 2em);
+	}
+
+	#progress-bar {
+		width: 68%;
+		height: clamp(0.9em, 1em, 1.1em);
+	}
+
+	#progress-value {
+		font-size: clamp(0.9em, 1em, 1.1em);
+	}
+
+	#progress-gain {
+		font-size: clamp(1.3em, 1.4em, 1.5em);
+	}
+
+	#custom-progress {
+		width: 68%;
+		height: clamp(0.9em, 1em, 1.1em);
+	}
+}
+
+/* Small laptops and large tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+	#progress-container {
+		width: clamp(14vw, 16vw, 18vw);
+		height: clamp(3vh, 3.5vh, 4vh);
+	}
+
+	#progress-bar-bg {
+		padding: clamp(1.1em, 1.2em, 1.3em) clamp(1.8em, 2em, 2.2em);
+	}
+}
+
+/* Large screens (1025px+) - Enhanced scaling */
+@media (min-width: 1025px) {
+	#progress-container {
+		width: clamp(10vw, 12vw, 14vw);
+		height: clamp(2.5vh, 3vh, 3.5vh);
+	}
+
+	#progress-bar-bg {
+		padding: clamp(1.2em, 1.4em, 1.6em) clamp(2em, 2.2em, 2.4em);
+	}
+
+	#progress-gain {
+		font-size: clamp(1.4em, 1.5em, 1.6em);
+	}
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+	#progress-container {
+		bottom: clamp(1vh, 2vh, 3vh);
+		height: clamp(4vh, 6vh, 8vh);
+	}
+
+	#progress-value {
+		font-size: clamp(0.8em, 0.9em, 1em);
+	}
+
+	#progress-gain {
+		font-size: clamp(1.1em, 1.2em, 1.3em);
+	}
+}
+
+/* Ultra-wide screens (aspect ratio considerations) */
+@media (min-aspect-ratio: 21/9) {
+	#progress-container {
+		right: clamp(2vw, 4vw, 6vw);
+		width: clamp(8vw, 10vw, 12vw);
+	}
+}
+
+/* High DPI / Retina display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	#progress-bar-bg {
+		border-width: 2px;
+		box-shadow: 0 1px 6px color-mix(in srgb, var(--color-primary) 25%, transparent);
+	}
+
+	#custom-progress {
+		border-width: 1px;
+	}
+}
+
+/* Accessibility: Prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	#progress-container,
+	#progress-bar,
+	#progress-gain,
+	#custom-progress .fill {
+		transition-duration: 0.1s;
+	}
+}
+
+/* Dark mode and color scheme preferences */
+@media (prefers-color-scheme: dark) {
+	:root {
+		/* Enhanced contrast for dark mode */
+		--alpha-overlay-75: rgba(0, 0, 0, 0.85);
+		--alpha-white-05: rgba(255, 255, 255, 0.08);
+		--alpha-white-10: rgba(255, 255, 255, 0.12);
+		--alpha-white-15: rgba(255, 255, 255, 0.18);
+		--alpha-white-20: rgba(255, 255, 255, 0.24);
+		--alpha-white-30: rgba(255, 255, 255, 0.35);
+	}
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+	#progress-bar-bg {
+		border-width: 3px;
+		border-color: var(--color-primary);
+	}
+
+	#progress-value {
+		color: var(--color-white);
+		text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+	}
+
+	#custom-progress {
+		border-width: 2px;
+		border-color: var(--color-primary);
+	}
+}
+

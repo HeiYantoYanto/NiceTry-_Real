@@ -1,0 +1,202 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title when hovered-->
+        <title>Andrew</title> 
+        <link rel="stylesheet" href="andrew.css">
+        <link rel="stylesheet" href="../../navbar/navbar_main.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="../../index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="../../index.html" class="navbar__links">
+                            Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <button>Team Info</button>
+                        <div class="content">
+                            <a href="../ferdinand/ferdinand.html">陈德辉</a>
+                            <a href="../hardian/hardian.html">柯玉甹</a>
+                            <a href="../ken/ken.html">黄明亮</a>
+                            <a href="../raynard/raynard.html">苏伟全</a>
+                            <a href="../andrew/andrew.html">廖伟汉</a>
+                            <a href="../bevan/bevan.html">唐杨恩</a>
+                        </div>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../index.html#courses-section" class="navbar__links">
+                            Course
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="../../games/difficulty.html" class="navbar__links">
+                            Games
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="../../login_signup/login/login.html" class="button">
+                            Log in
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="../../login_signup/signup/signup.html" class="button">
+                            Sign up                    
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+            
+            <!-- Hero Section-->
+            <div class="stars"></div>
+            <div class="twinkling"></div> 
+            <div class="clouds"></div>
+            <div id="moon"></div>
+            <div class="title">
+            <div class="main">
+                <div class="main__container">
+                    <div class="main__content">
+                        <img src="../../images/andrew.png" alt="">
+                    </div>
+                    <div class="main__column">
+                        <h1>
+                            廖伟汉 - Tester, Programmer
+                        </h1>
+                        <h2>
+                            "This paragraph totally wasn't written by AI"
+                        </h2>
+                        <p>
+                            Hello! My name is 廖伟汉, but you can also call me Andrew Leonardo. I'm from Indonesia, and in this project my role is mainly as a tester. That means I spend a lot of time checking the software, making sure everything works the way it should, and pointing out things that could be improved. It's not just about finding bugs, but also about making the whole experience smoother and more enjoyable for anyone who uses it.<br><br>
+
+                            In addition to testing, I also contribute as a programmer. This allows me to go beyond identifying issues by actively helping to resolve them and enhance different aspects of the project. I also take part in expanding the website and occasionally assist with design considerations. I believe that working on both testing and development gives me a balanced perspective, allowing me to support the team more effectively.<br><br>
+
+                            Outside of this project, my personal interests include playing games and coding. Games inspire my curiosity about design and interactivity, while coding provides me with the tools to bring my own ideas to life. Through this project, I hope to further improve my technical skills, strengthen my teamwork, and contribute meaningfully to the team's success.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <script src="app.js"></script>
+            <script src="andrew.js"></script>
+            <script>
+            // Moon animation and drag logic
+            const moon = document.getElementById('moon');
+            let moonX = 0;
+            let moonY = 80;
+            let dragging = false;
+            let offsetX = 0;
+            let offsetY = 0;
+            let autoMove = true;
+            let moonWidth = 100;
+            let moonHeight = 100;
+
+            function setMoonPos(x, y) {
+                moon.style.left = x + 'px';
+                moon.style.top = y + 'px';
+            }
+
+            function animateMoon() {
+                if (autoMove && !dragging) {
+                    moonX += 0.5;
+                    if (moonX > window.innerWidth) moonX = -moonWidth;
+                    setMoonPos(moonX, moonY);
+                }
+                requestAnimationFrame(animateMoon);
+            }
+
+            moon.addEventListener('mousedown', function(e) {
+                dragging = true;
+                autoMove = false;
+                offsetX = e.clientX - moonX;
+                offsetY = e.clientY - moonY;
+            });
+            document.addEventListener('mousemove', function(e) {
+                if (dragging) {
+                    moonX = e.clientX - offsetX;
+                    moonY = e.clientY - offsetY;
+                    setMoonPos(moonX, moonY);
+                }
+            });
+            document.addEventListener('mouseup', function() {
+                if (dragging) {
+                    dragging = false;
+                    setTimeout(() => { autoMove = true; }, 2000); // resume auto after 2s
+                }
+            });
+
+            // Touch support
+            moon.addEventListener('touchstart', function(e) {
+                dragging = true;
+                autoMove = false;
+                const touch = e.touches[0];
+                offsetX = touch.clientX - moonX;
+                offsetY = touch.clientY - moonY;
+            });
+            document.addEventListener('touchmove', function(e) {
+                if (dragging) {
+                    const touch = e.touches[0];
+                    moonX = touch.clientX - offsetX;
+                    moonY = touch.clientY - offsetY;
+                    setMoonPos(moonX, moonY);
+                }
+            });
+            document.addEventListener('touchend', function() {
+                if (dragging) {
+                    dragging = false;
+                    setTimeout(() => { autoMove = true; }, 2000);
+                }
+            });
+
+            // Initial position and start animation
+            setMoonPos(moonX, moonY);
+            animateMoon();
+            </script>
+
+        <!-- User Sidebar -->
+        <div id="user-sidebar" class="user-sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3>User Menu</h3>
+                    <button class="close-sidebar" id="close-sidebar">&times;</button>
+                </div>
+                <div class="sidebar-body">
+                    <div class="user-info">
+                        <i class="fa-solid fa-circle-user sidebar-user-icon"></i>
+                        <p id="sidebar-username">User</p>
+                    </div>
+                    <div class="sidebar-options">
+                        <!-- Settings removed -->
+                        <a href="../../profile/achivements.html" class="sidebar-btn" id="achievements-btn">
+                            <i class="fa-solid fa-trophy"></i> Achievements
+                        </a>
+                        <button class="sidebar-btn" id="logout-btn">
+                            <i class="fa-solid fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="../../shared/sidebar.js"></script>
+        <script src="../../shared/auth.js"></script>
+    </body>
+    </html>

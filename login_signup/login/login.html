@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loginsignupw</title>
+
+    <link rel="stylesheet" href="../../navbar/navbar_main.css">
+    <link rel="stylesheet" href="login-styles.css">
+
+
+    <!-- This is for symbols-->
+    <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+    <!-- This is for Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+   <nav class="navbar">
+        <div class="navbar__container">
+            <a href="../../index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+            <div class="navbar__toggle" id="mobile-menu"> 
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="../../index.html" class="navbar__links">
+                        Home
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <button>Team Info</button>
+                    <div class="content">
+                        <a href="../../team_info/ferdinand/ferdinand.html">陈德辉</a>
+                        <a href="../../team_info/hardian/hardian.html">柯玉甹</a>
+                        <a href="../../team_info/ken/ken.html">黄明亮</a>
+                        <a href="../../team_info/raynard/raynard.html">苏伟全</a>
+                        <a href="../../team_info/andrew/andrew.html">廖伟汉</a>
+                        <a href="../../team_info/bevan/bevan.html">唐杨恩</a>
+                    </div>
+                </li>
+                <li class="navbar__item">
+                    <a href="../../index.html#courses-section" class="navbar__links">
+                        Course
+                    </a>
+                </li>
+                <li class="navbar__item">
+                    <a href="../../games/difficulty.html" class="navbar__links">
+                        Games
+                    </a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="../../login_signup/login/login.html" class="button">
+                        Log in
+                    </a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="../../login_signup/signup/signup.html" class="button">
+                        Sign up                    
+                    </a>
+                </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Hero Section / Signup -->
+        <div class="signup__container">
+            <form action="" class="signup__form" id="signup__form">
+                <div class="signup__form">
+                    <h2>Welcome Back!</h2>
+                    <div class="signup__form-group">
+                        <input type="email" id="username" name="username" required placeholder="Email Address">
+                    </div>
+                    <div class="signup__form-group">
+                        <input type="password" id="email" name="email" required placeholder="Password">
+                    </div>
+                    <button type="submit" class="login__btn">Log in</button>
+                    <p id="have__account">Don't have an account? <a id="signup-link" href="../..//login_signup/signup/signup.html">Sign up</a></p>
+                </div>
+            </form>
+            <div class="signup__image">
+                <spline-viewer class = orb-3d url="https://prod.spline.design/0JfUOyBQElBHpAOn/scene.splinecode"></spline-viewer>
+            </div>
+        </div>
+
+        <!-- User Sidebar -->
+        <div id="user-sidebar" class="user-sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3>User Menu</h3>
+                    <button class="close-sidebar" id="close-sidebar">&times;</button>
+                </div>
+                <div class="sidebar-body">
+                    <div class="user-info">
+                        <i class="fa-solid fa-circle-user sidebar-user-icon"></i>
+                        <p id="sidebar-username">User</p>
+                    </div>
+                    <div class="sidebar-options">
+                        <!-- Settings removed -->
+                        <a href="../../profile/achivements.html" class="sidebar-btn" id="achievements-btn">
+                            <i class="fa-solid fa-trophy"></i> Achievements
+                        </a>
+                        <button class="sidebar-btn" id="logout-btn">
+                            <i class="fa-solid fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="login-app.js"></script>
+        <script src="../../shared/sidebar.js"></script>
+        <script src="../../shared/auth.js"></script>
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.56/build/spline-viewer.js"></script>
+    </body>
+</html>

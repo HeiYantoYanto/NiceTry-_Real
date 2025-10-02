@@ -1,0 +1,182 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="theme.css">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="navbar/navbar_main.css">
+        <link rel="stylesheet" href="course/courses-mainpage/courses-styles.css">
+
+        <!-- This is for symbols-->
+        <script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+
+        <!-- This is for Google Fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    </head>
+    <body data-page="home">
+        <!-- Navbar Section-->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a href="index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+                <div class="navbar__toggle" id="mobile-menu"> 
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="index.html" class="navbar__links">
+                            Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <button>Team Info</button>
+                        <div class="content">
+                            <a href="team_info/ferdinand/ferdinand.html">陈德辉</a>
+                            <a href="team_info/hardian/hardian.html">柯玉甹</a>
+                            <a href="team_info/ken/ken.html">黄明亮</a>
+                            <a href="team_info/raynard/raynard.html">苏伟全</a>
+                            <a href="team_info/andrew/andrew.html">廖伟汉</a>
+                            <a href="team_info/bevan/bevan.html">唐杨恩</a>
+                        </div>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="#courses-section" class="navbar__links" id="course-navbar-link">
+                            Course
+                        </a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="games/difficulty.html" class="navbar__links">
+                            Games
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="login_signup/login/login.html" class="button">
+                            Log in
+                        </a>
+                    </li>
+                    <li class="navbar__btn">
+                        <a href="login_signup/signup/signup.html" class="button">
+                            Sign up                    
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+            
+        <!-- Hero Section-->
+        <div class="main__container">
+            <div class="main__text-button-container">
+                <div class="main__text-container">
+                    <h1>Learn Data Structures</h1>
+                    <h1>and <span id="algotext">Algorithms</span></h1>
+                </div>
+                <div class="main__btn-container">
+                    <a href="#courses-section" id="learn__btn">Start Learning</a>
+                    <a href="games/difficulty.html" id="game__btn">Test Your Knowledge</a>
+                </div>
+            </div>
+                <spline-viewer class = "robot-3d" url="https://prod.spline.design/NBzJNck8AeuJXtWA/scene.splinecode"></spline-viewer>
+        </div>
+
+        <!-- Spline 3D Viewer Embed-->
+        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.55/build/spline-viewer.js"></script> 
+        
+        
+        <div id="main__arrow">
+            <a href="#" class="down-arrow" id="scroll-arrow">
+                <img src="images/down-arrow.svg" alt="down-arrow"></img>
+            </a>
+        </div>
+
+        <!-- Course section -->
+        <section id="courses-section">
+            <div class="next__fadein">
+                <h1>Our Courses</h1>
+                <p id="course-provided">Courses Provided by NICETRY</p>
+            </div>
+            <div class="courses__container">
+                <a class="courses__list" href="course/course-type/sortalgo/sort.html">
+                    <div class="course1-img">
+                        <i class="fa-solid fa-arrow-down-wide-short course-icon"></i>
+                        <span class="course-label">Sorting Algorithm</span>
+                    </div>
+                </a>
+                <a class="courses__list" href="course/course-type/searchalgo/search.html">
+                    <div class="course2-img">
+                        <i class="fa-solid fa-magnifying-glass course-icon"></i>
+                        <span class="course-label">Searching Algorithm</span>
+                    </div>
+                </a>
+                <a class="courses__list" href="course/course-type/data_structure/datastructure.html">
+                    <div class="course3-img">
+                        <i class="fa-solid fa-database course-icon"></i>
+                        <span class="course-label">Data Structures</span>
+                    </div>
+                </a>
+            </div>
+            <div class="waves-section">
+                <div class="wave wave1"></div>
+                <div class="wave wave2"></div>
+                <div class="wave wave3"></div>
+                <div class="wave wave4"></div>
+            </div>
+        </section>
+
+         <!-- Progress Bar (bottom right, hidden by default) -->
+        <div id="progress-container" style="display:none;">
+          <div id="progress-bar-bg">
+            <progress id="progress-bar" value="0" max="100"></progress>
+            <span id="progress-value">0%</span>
+            <span id="progress-gain" style="display:none;">+0</span>
+          </div>
+        </div>
+
+        <!-- User Sidebar -->
+        <div id="user-sidebar" class="user-sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-header">
+                    <h3>User Menu</h3>
+                    <button class="close-sidebar" id="close-sidebar">&times;</button>
+                </div>
+                <div class="sidebar-body">
+                    <div class="user-info">
+                        <i class="fa-solid fa-circle-user sidebar-user-icon"></i>
+                        <p id="sidebar-username">User</p>
+                    </div>
+                    <div class="sidebar-options">
+                        <!-- Settings removed -->
+                        <a href="profile/achivements.html" class="sidebar-btn" id="achievements-btn">
+                            <i class="fa-solid fa-trophy"></i> Achievements
+                        </a>
+                        <button class="sidebar-btn" id="logout-btn">
+                            <i class="fa-solid fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+        <script src="shared/click.js"></script>
+        <script src="shared/sidebar.js"></script>
+        <script src="shared/progress-home.js"></script>
+    <script src="shared/auth.js"></script>
+    <script src="shared/theme.js"></script>
+        <!-- Diagnostic Test Modal -->
+        <div id="diagnostic-modal-overlay" style="display:none;">
+            <div id="diagnostic-modal">
+                <h2>Diagnostic Test</h2>
+                <form id="diagnostic-quiz-form">
+                    <div id="diagnostic-questions" class="diagnostic-questions-scroll"></div>
+                    <button type="submit" id="diagnostic-submit-btn">Submit Answers</button>
+                </form>
+                <div id="diagnostic-result" style="display:none;"></div>
+            </div>
+        </div>
+    </body>
+</html>

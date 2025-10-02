@@ -1,0 +1,258 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+
+.navbar {
+    height: 10vh;
+    align-content: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5rem;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    padding-left: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+    display: inline-block;
+    transition: transform 0.18s cubic-bezier(.6,.2,.2,1);
+}
+.navbar a:hover {
+    transform: scale(1.13);
+}
+
+.navbar__right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown__toggle {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #222;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+.dropdown__toggle:hover {
+    background: #000;
+    color: #fff;
+}
+.dropdown__menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 110%;
+    min-width: 180px;
+    background: #fff;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+    border-radius: 8px;
+    z-index: 100;
+    flex-direction: column;
+    padding: 0.5rem 0;
+}
+.dropdown:hover .dropdown__menu {
+    display: flex;
+}
+.dropdown__menu a {
+    color: #222;
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    transition: background 0.18s;
+}
+.dropdown__menu a:hover {
+    background: #000;
+    color: #fff;
+}
+.navbar a:not(:hover) {
+    transform: scale(1);
+}
+
+.main__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 90vh;
+}
+
+.main__text {
+    width: 60vw;
+    height: 90vh;
+    align-content: center;
+    justify-items: center;
+} 
+
+.main__text h1, .main__text h2 {
+    opacity: 0;
+    transform: translateX(-60px);
+    animation: fadeInLeft 1.1s cubic-bezier(.6,.2,.2,1) forwards;
+}
+.main__text h1 {
+    background-color: white;
+    margin: 2.5rem 0;
+    font-size: 4rem;
+    justify-self: center;
+    animation-delay: 0.1s;
+}
+.main__text h2 {
+    background-color: white;
+    margin: 1rem 0;
+    font-size: 2rem;
+    justify-self: center;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.main__image {
+    background-color: white;
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../../images/background-raynard.svg');
+    background-size: cover;
+    background-position: center;
+    width: 40vw;
+    min-width: 260px;
+    box-sizing: border-box;
+}
+
+.main__image img {
+    width: 90%;
+    max-width: 340px;
+    min-width: 180px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50px;
+    transition: transform 0.1s linear;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 900px) {
+  .main__top { flex-direction: column; height: auto; }
+  .main__image, .main__text { width: 100vw; min-width: 0; }
+  .main__image { justify-content: center; padding: 1.5rem 0; }
+  .main__image img { width: 60vw; max-width: 320px; min-width: 120px; }
+}
+
+.main__bottom {
+    background-color: #B3634B;
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: 1fr 2fr;
+    height: 100vh;
+}
+
+.mixer {
+    width: 40vw;
+    height: auto;
+    justify-content: center;
+    align-content: center;
+    padding: 2rem;
+}
+
+.aboutme-bar {
+    width: 100%;
+    background: #EABF74;
+    overflow: hidden;
+    border-radius: 14px;
+    margin: 0 0 2.2rem 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    height: 4.2rem;
+    display: flex;
+    align-items: center;
+}
+.aboutme-scroll {
+    display: flex;
+    white-space: nowrap;
+    animation: aboutme-scroll 16s linear infinite;
+    font-size: 2.1rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 0.12em;
+    padding-left: 0.5rem;
+}
+@keyframes aboutme-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.paragraph {
+    width: 60vw;
+    height: auto;
+    padding: 2.5rem;
+    align-content: center;
+}
+
+.paragraph p {
+    text-align: center;
+    background-color: #EABF74;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.mixer img {
+    width: 100%;
+    height: auto;
+    border-radius: 50px;
+}
+
+
+.fade-in-bottom {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.7s cubic-bezier(.6,.2,.2,1), transform 0.7s cubic-bezier(.6,.2,.2,1);
+}
+.fade-in-bottom.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Easter Egg Additions */
+.spin-10rps { animation: spin 0.1s linear infinite; }
+.spin-5rps { animation: spin 0.2s linear infinite; }
+@keyframes spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+.no-transition { transition: none !important; }
+.egg-popup { position: fixed; bottom: 1rem; left: 1rem; background: rgba(0,0,0,0.8); color:#fff; padding:.6rem 1rem; border-radius:6px; font-size:.85rem; z-index:2000; animation: fadein .3s ease; }
+.skip-btn { position: fixed; bottom:1rem; left:1rem; background:#fff; color:#000; padding:.6rem 1rem; border-radius:6px; font-weight:600; cursor:pointer; z-index:2100; box-shadow:0 2px 6px rgba(0,0,0,.3);} 
+.skip-btn:hover { background:#222; color:#fff; }
+.flash-overlay { pointer-events:none; position:fixed; inset:0; opacity:0; animation: flashColors 1s steps(1, end) infinite; z-index:2000; }
+@keyframes flashColors { 0%{background:#00ff00;opacity:.7;} 16%{background:#0000ff;} 33%{background:#ffa500;} 50%{background:#ffff00;} 66%{background:#ff0000;} 83%{background:#800080;} 100%{background:#00ff00;} }
+@keyframes fadein { from { opacity:0; transform: translateY(5px);} to { opacity:1; transform: translateY(0);} }

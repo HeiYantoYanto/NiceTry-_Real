@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" data-page="profile">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Profile - NICETRY</title>
+	<link rel="stylesheet" href="../theme.css">
+	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="../navbar/navbar_main.css">
+	<link rel="stylesheet" href="profile.css">
+
+	<script src="https://kit.fontawesome.com/26e13cefd0.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body data-page="profile">
+	<!-- Navbar -->
+	<nav class="navbar">
+		<div class="navbar__container">
+			<a href="../index.html" id="navbar__logo"><i class="fa-solid fa-skull"></i> NICETRY</a>
+			<div class="navbar__toggle" id="mobile-menu">
+				<span class="bar"></span><span class="bar"></span><span class="bar"></span>
+			</div>
+			<ul class="navbar__menu">
+				<li class="navbar__item"><a href="../index.html" class="navbar__links">Home</a></li>
+				<li class="dropdown">
+					<button>Team Info</button>
+					<div class="content">
+						<a href="../team_info/ferdinand/ferdinand.html">陈德辉</a>
+						<a href="../team_info/hardian/hardian.html">柯玉甹</a>
+						<a href="../team_info/ken/ken.html">黄明亮</a>
+						<a href="../team_info/raynard/raynard.html">苏伟全</a>
+						<a href="../team_info/andrew/andrew.html">廖伟汉</a>
+						<a href="../team_info/bevan/bevan.html">唐杨恩</a>
+					</div>
+				</li>
+				<li class="navbar__item"><a href="../index.html#courses-section" class="navbar__links">Course</a></li>
+				<li class="navbar__item"><a href="../games/difficulty.html" class="navbar__links">Games</a></li>
+				<li class="navbar__btn"><a href="../login_signup/login/login.html" class="button">Log in</a></li>
+				<li class="navbar__btn"><a href="../login_signup/signup/signup.html" class="button">Sign up</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<!-- Back Button -->
+	<a href="../index.html" class="back__button"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+
+	<div class="profile__container">
+		<div class="profile__header">
+			<h1>Profile</h1>
+			<p>Set your avatar and personalize the site style</p>
+		</div>
+
+		<div class="profile__content">
+			<!-- Left: Avatar -->
+			<div class="card">
+				<h2><i class="fa-solid fa-user"></i> Your Avatar</h2>
+				<div class="avatar-wrap">
+					<div class="avatar" id="avatarBox">
+						<div class="placeholder"><i class="fa-solid fa-user"></i></div>
+					</div>
+					<div class="row">
+						<input type="file" id="avatarInput" accept="image/*" style="display:none" />
+						<button class="btn" id="chooseAvatarBtn"><i class="fa-solid fa-upload"></i> Upload</button>
+						<button class="btn secondary" id="clearAvatarBtn"><i class="fa-solid fa-trash"></i> Remove</button>
+					</div>
+					<div class="meta">Recommended: square images, at least 256×256.</div>
+				</div>
+			</div>
+
+			<!-- Right: Customization -->
+			<div class="card">
+				<h2><i class="fa-solid fa-wand-magic-sparkles"></i> Customize</h2>
+				
+				<!-- Accent Color -->
+				<div class="field">
+					<label for="accentPicker">Accent color</label>
+					<div class="row">
+						<input type="color" id="accentPicker" value="#EFC554">
+					</div>
+					<div class="preview-accent" id="accentPreview"></div>
+				</div>
+
+				<!-- Avatar Frame -->
+				<div class="field" style="margin-top:1rem;">
+					<label>Avatar frame</label>
+					<div id="frameGrid" class="row" style="gap:12px; flex-wrap:wrap;"></div>
+					<div class="meta">Unlock avatar frames from Gacha rewards. Default frame is always available.</div>
+				</div>
+
+				<!-- Navbar Theme -->
+				<div class="field" style="margin-top:1rem;">
+					<label>Navbar Theme</label>
+					<div id="navbarThemeGrid" class="row" style="gap:12px; flex-wrap:wrap;"></div>
+					<div class="meta">Unlock navbar themes from Gacha rewards. Default (Dark) is always available.</div>
+				</div>
+
+
+
+				<!-- Special Effects -->
+				<div class="field" style="margin-top:1rem;">
+					<label>Special Effects</label>
+					<div id="specialEffectsGrid" class="row" style="gap:12px; flex-wrap:wrap;"></div>
+					<div class="row" style="gap:8px; margin-top:8px;">
+						<button class="btn secondary" id="rgbSpeedBtn" title="Adjust RGB Cycle speed">Speed: Normal</button>
+					</div>
+					<div class="meta">Unlock special effects from Gacha rewards.</div>
+				</div>
+
+				<!-- Site Theme (Global Accent) -->
+				<div class="field" style="margin-top:1rem;">
+					<label>Site Theme</label>
+					<div id="siteThemeGrid" class="row" style="gap:12px; flex-wrap:wrap;"></div>
+					<div class="meta">Unlock additional site accent themes from Gacha rewards. Purple is always available.</div>
+				</div>
+
+				<div class="actions">
+					<button class="btn" id="saveCustomize"><i class="fa-solid fa-save"></i> Save</button>
+					<button class="btn secondary" id="resetCustomize"><i class="fa-solid fa-rotate"></i> Reset</button>
+				</div>
+			</div>
+
+			<!-- Admin Panel (visible to admin only) -->
+			<div class="card" id="adminPanel" style="display:none">
+				<h2><i class="fa-solid fa-shield"></i> Admin Panel</h2>
+				<p class="meta">Admin tools: reset XP/achievements and set coins.</p>
+				<div class="actions">
+					<button class="btn" id="adminReset"><i class="fa-solid fa-broom"></i> Reset XP & Achievements</button>
+					<button class="btn secondary" id="adminCoins"><i class="fa-solid fa-coins"></i> Set 500 Coins</button>
+				</div>
+				<div class="meta" id="adminStatus" style="margin-top:8px"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- User Sidebar -->
+	<div id="user-sidebar" class="user-sidebar">
+		<div class="sidebar-content">
+			<div class="sidebar-header">
+				<h3>User Menu</h3>
+				<button class="close-sidebar" id="close-sidebar">&times;</button>
+			</div>
+			<div class="sidebar-body">
+				<div class="user-info">
+					<i class="fa-solid fa-circle-user sidebar-user-icon"></i>
+					<p id="sidebar-username">User</p>
+				</div>
+				<div class="sidebar-options">
+					<!-- Settings removed -->
+					<a href="achivements.html" class="sidebar-btn" id="achievements-btn"><i class="fa-solid fa-trophy"></i> Achievements</a>
+					<button class="sidebar-btn" id="logout-btn"><i class="fa-solid fa-sign-out-alt"></i> Logout</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="../app.js"></script>
+	<script src="../shared/click.js"></script>
+	<script src="../shared/sidebar.js"></script>
+	<script src="../shared/auth.js"></script>
+	<script src="../shared/theme.js"></script>
+	<script src="profile.js"></script>
+</body>
+</html>

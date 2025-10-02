@@ -1,0 +1,254 @@
+:root{
+    --nav-color: #CEBEBE;
+    --text-color: #ECE2D0;
+    --main-color: #6D2E46;
+    --secondary-color: #A26769;
+    --third-color: #D5B9B2;
+}
+
+/* Royale card image should scale fluidly within its parent */
+.royale-card__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+*{ /*The * means it applies to all elements*/
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Kumbh Sans', sans-serif;
+    }   
+
+        /* Hero Sec CSS*/
+    .main {
+        background-color: #0d1b2a; /* deep blue to match Clash Royale vibe */
+        overflow-x: hidden; /* avoid stray horizontal scroll on wide screens */
+    }
+
+    .main__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(16px, 3vw, 40px);
+        justify-self: center;
+        align-items: start; /* top align to avoid crooked baselines */
+        min-height: 90vh; /* allow taller content to expand */
+        padding: clamp(12px, 2.5vw, 24px);
+        padding-bottom: 56px; /* room for elixir bar overlay */
+        background-color: transparent;
+        z-index: 10; /* ensure content is in front */
+        width: 100%;
+        max-width: 1200px;
+        margin-inline: auto;
+        position: relative;
+    }
+
+    /* Arena background: isometric-ish tiles using gradients */
+    .cro-arena{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 100vw;              /* full-bleed width regardless of container max-width */
+        transform: translateX(-50%);
+        z-index: -1;               /* always behind container content */
+        pointer-events: none;
+        background-color: #102a43;
+        background-image:
+            linear-gradient(45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
+            linear-gradient(-45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.06) 75%),
+            linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.06) 75%);
+        background-size: 40px 40px;
+        background-position: 0 0, 0 20px, 20px -20px, -20px 0;
+        filter: saturate(120%);
+    }
+
+    /* Royale card frame */
+    .main__content .royale-card{
+        align-self: center;
+        position: relative;
+        width: min(100%, 420px);
+        margin: 20px auto 0; /* center card horizontally */
+        border-radius: 18px;
+        padding: 12px;
+        background: linear-gradient(180deg, #f2c14e, #c17d0d);
+        box-shadow: 0 10px 0 #8b5e00, 0 12px 24px rgba(0,0,0,0.45);
+        transition: transform 250ms ease, box-shadow 250ms ease;
+    }
+
+    .royale-card__img{
+        border-radius: 12px;
+        box-shadow: inset 0 0 0 2px rgba(0,0,0,0.2);
+    }
+
+    .royale-card::after{
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 18px;
+        box-shadow: inset 0 4px 0 rgba(255,255,255,0.35), inset 0 -4px 0 rgba(0,0,0,0.25);
+        pointer-events: none;
+    }
+
+    .royale-card:hover{
+        transform: translateY(-4px);
+        box-shadow: 0 14px 0 #8b5e00, 0 18px 36px rgba(0,0,0,0.5);
+    }
+
+    /* Crown badge */
+    .crown-badge{
+        width: 72px;
+        height: 54px;
+        background: linear-gradient(180deg, #ffd166, #f08a24);
+        clip-path: polygon(10% 100%, 10% 45%, 25% 35%, 35% 60%, 45% 35%, 55% 60%, 65% 35%, 75% 60%, 85% 35%, 90% 45%, 90% 100%);
+        box-shadow: 0 6px 0 #a35a00, 0 10px 18px rgba(0,0,0,0.35);
+        border-radius: 6px;
+        margin-bottom: 8px;
+    }
+
+    /* Elixir bar */
+    .elixir-bar{
+        position: absolute;
+        left: 50%;
+        bottom: 14px;
+        transform: translateX(-50%);
+        width: min(480px, 80vw);
+        height: 16px;
+        background: linear-gradient(180deg, #4b2e83, #2a174a);
+        border-radius: 999px;
+        box-shadow: inset 0 0 0 2px rgba(255,255,255,0.12), 0 6px 14px rgba(0,0,0,0.35);
+        overflow: hidden;
+        z-index: 2;
+    }
+    .elixir-bar .elixir-fill{
+        position: absolute;
+        top: 0; left: 0; bottom: 0;
+        width: 0%;
+        background: linear-gradient(180deg, #c084fc, #a855f7);
+        animation: elixir-fill-loop 6s ease-in-out infinite;
+    }
+    .elixir-bar .elixir-orb{
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        width: 20px; height: 20px;
+        background: radial-gradient(circle at 30% 30%, #f0d9ff, #b87df5 60%, #8b5cf6 100%);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px #c084fc, 0 0 20px rgba(192,132,252,0.6);
+        animation: elixir-orb-loop 6s ease-in-out infinite;
+    }
+
+    @keyframes elixir-fill-loop{
+        0%   { width: 0%; }
+        45%  { width: 100%; }
+        55%  { width: 100%; }
+        100% { width: 0%; }
+    }
+    @keyframes elixir-orb-loop{
+        0%   { left: 0%; }
+        45%  { left: 100%; }
+        55%  { left: 100%; }
+        100% { left: 0%; }
+    }
+
+    .main__row {
+        display: flex;
+        flex-direction: row;
+        align-items: start;
+        margin-bottom: 4rem;
+    }
+
+    .main__column {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* top align vertically */
+        align-items: stretch;        /* let text align naturally */
+        gap: 1.25em;
+        color: var(--text-color);
+        text-align: left;            /* left-align on desktop for cleaner reading */
+    }
+
+    .main__column h1 {
+        font-size: 3rem;
+    }
+
+    .main__column h2 {
+        font-size: 2rem;
+    }
+     
+    .main__column p {
+        text-align: left;
+        background-color: rgba(213, 185, 178, 0.3); /*so translucent*/
+        padding: 1rem 1.25rem;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        max-width: 70ch; /* comfortable reading width */
+        margin-inline: 0; /* align with headings */
+    }   
+
+    .main__content img,
+    .royale-card__img{
+        border: 10px solid var(--third-color);
+        align-self: center; /* Center the image vertically */
+        border-radius: 12px; /* Rounded corners */
+        box-shadow: 0 8px 16px #131313;
+        margin-top: 20px;
+        margin-left: 0; /* avoid pushing off-screen on small devices */
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Typographic scaling */
+    .main__column h1 { font-size: clamp(1.75rem, 2.4vw + 1rem, 3rem); }
+    .main__column h2 { font-size: clamp(1.25rem, 1.6vw + 0.75rem, 2rem); }
+    .main__column p { line-height: 1.6; font-size: clamp(1rem, 0.4vw + 0.95rem, 1.125rem); }
+
+    /* Tablet */
+    @media screen and (max-width: 1024px) {
+        .main__container { grid-template-columns: 1fr; }
+        .main__content, .main__column { justify-self: center; }
+        .main__column { align-items: center; text-align: center; }
+        .main__column p { text-align: center; margin-inline: auto; }
+    }
+
+    /* Mobile Responsive */
+    @media screen and (max-width: 768px) {
+        .main__container {
+            grid-template-columns: 1fr;
+            align-items: center;
+            justify-self: center;
+            width: 100%;
+            margin: 0 auto;
+            min-height: 90vh; /* allow vertical growth on mobile too */
+            padding-bottom: 56px; /* extra space for elixir bar on small screens */
+        }
+
+        .main__content {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .royale-card { margin-left: 0; width: min(100%, 460px); }
+        .royale-card__img{ width: 100%; height: auto; max-height: 60vh; }
+    }
+
+    @media screen and (max-width: 480px) {
+        .main__content h1 { margin-top: 1.5rem; }
+        .main__content h2 { font-size: 1.5rem; }
+        .main__content p { margin-top: 1rem; }
+
+        .main__btn {
+            padding: 12px 36px;
+            margin: 2.5 rem 0;
+        }
+    }
+
+    /* Respect user motion preferences */
+    @media (prefers-reduced-motion: reduce) {
+        .elixir-bar .elixir-fill,
+        .elixir-bar .elixir-orb,
+        .royale-card { animation: none !important; transition: none !important; }
+    }
